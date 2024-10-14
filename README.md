@@ -9,8 +9,8 @@ Objek adalah sebuah instansiasi atau bentuk dari class. Objek adalah sebuah vari
 Atribut adalah variable yang dimiliki oleh class. Atribut menyimpan data atau informasi yang menunjukan karateristik dari objek atau class. Atribut dapat disebut sebagai variable class
 <h5>4. Method</h5>
 Method adalah perilaku atau kemampuan yang dimiliki oleh sebuah class. Method bisa berupa prosedure atau function. Prosedure bila tidak mengembalikan nilai, dan function bila mengembalika nilai. Method adalah operasi atau fungsi yang dilakukan oleh objek.
-Aksebilitas atau Hak Akses yang dimiliki atribut dan method :
-  a. Public : Dapat diakses dari mana saja
-  b. Private : Hanya dapat diakses dalam kelas itu sendiri
-  c. Protected : Dapat diakses oleh kelas itu sendiri atau kelas turunan
+Aksebilitas atau Hak Akses yang dimiliki atribut dan method : <br>
+  a. Public : Dapat diakses dari mana saja <br>
+  b. Private : Hanya dapat diakses dalam kelas itu sendiri <br>
+  c. Protected : Dapat diakses oleh kelas itu sendiri atau kelas turunan<br>
 
