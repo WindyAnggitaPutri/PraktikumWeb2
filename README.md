@@ -14,3 +14,10 @@ Aksebilitas atau Hak Akses yang dimiliki atribut dan method : <br>
   b. Private : Hanya dapat diakses dalam kelas itu sendiri <br>
   c. Protected : Dapat diakses oleh kelas itu sendiri atau kelas turunan<br>
 
+<h2>Instruksi Kerja Jobsheet 1</h2>
+1. Membuat Class dan Object<br>
+2. Implementasi Constructor<br>
+3. Membuat Metode Tambahan<br>
+4. Penggunaan Atribut dan Method<br>
+
+
