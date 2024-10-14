@@ -14,10 +14,42 @@ Aksebilitas atau Hak Akses yang dimiliki atribut dan method : <br>
   b. Private : Hanya dapat diakses dalam kelas itu sendiri <br>
   c. Protected : Dapat diakses oleh kelas itu sendiri atau kelas turunan<br>
 
-<h2>Instruksi Kerja Jobsheet 1</h2>
+<h3>Instruksi Kerja Jobsheet 1</h3>
 1. Membuat Class dan Object<br>
 2. Implementasi Constructor<br>
 3. Membuat Metode Tambahan<br>
 4. Penggunaan Atribut dan Method<br>
+
+<h3>Tugas Jobsheet 1</h3>
+<h5>Proses Pembuatan Class</h5>
+1. Langkah pertama yaitu tuliskan perintah <?php?><br>
+2. selanjutnya membuat class Dosen dengan di didalamnya diisi dengan atribut nama, nip dan matakuliah<br>
+3. Selanjutnya membuat Construct, untuk menginisialisasi nilai baru yang akan dibuat nanti<br>
+4. Selanjutnya yaitu membuat method tampilkan dosen untuk menampilkan data dosen yang telah dibuat<br>
+5. selanjutnya yaitu melakukan Instansiasi dari class dosen, dengan memasukan nama, nim, dan mata kuliah<br>
+6. membuat perintah untuk menampilkan data dosen dengan memanggilkan fungsi tampilkanDosen<br>
+
+
+<h1>JoobSheet2</h1>
+<h3>OOP atau Object Oriented Programming</h3> adalah paradigma pemrograman yang berfokus pada konsep objek. OOP memiliki konsep dasar yaitu Class, Objek, Atribut dan Method. Jika ada konsep dasar maka akan ada Prinsip dasar dari OOP yaitu : <br>
+1. Encapsulation<br>
+Encapsulation digunakan untuk menyembunyikan detail implementasi dan hanya memberikan akses melalui metode tersebut 
+2. Inheritance<br>
+Inheritance merupakan prinsip dimana kelas daoat mewarisi properti dan metode dari kelas lainnya.
+3. Polymorphism<br>
+Polymorphism merupakan prinsip dimana metode yang sama dapat memiliki implementasi berbeda di dalam class yang berbeda.
+4. Abstraction<br> 
+Abstraction adalah prinsip yang menyembunyikan detail implementasi dan hanya menampilkan fungsi penting<br>
+
+
+<h3>Instruksi Kerja Jobsheet 2</h3>
+1. Membuat Class dan Object<br>
+2. Encapsulation<br>
+3. Inheritance<br>
+4. Polymorphism<br>
+5. Abstraction<br>
+
+
+
 
 
