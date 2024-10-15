@@ -433,7 +433,87 @@ Abstraction adalah prinsip yang menyembunyikan detail implementasi dan hanya men
 
 ### Instruksi Kerja Jobsheet 2
 1. Membuat Class dan Object<br>
+o Buat class Mahasiswa yang memiliki atribut nama, nim, dan jurusan.<br>
+##### codingan untuk membuat class
+```php
+<?php
+//perintah untuk membuka perintah atau dokumen php
+//perintah untuk membuat atau mendefinisikan class mahasiswa
+class mahasiswa {
+    //perintah untuk membuat atribut, dan memberikan hak akses kepada masing masing atribut, hak akses yang digunakan disini yaitu public
+    public $nama;
+    public $nim;
+    public $jurusan;
 
+    //membuat method construct untuk menginisialisasi atribut
+    public function __construct($nama, $nim, $jurusan){
+        //menginisialisasi  nilai atribut nama, nip, mataKuliah
+        $this->nama = $nama;
+        $this->nim = $nim;
+        $this->jurusan = $jurusan;
+    
+    }
+}
+?>
+```
+##### Hasil Output
+![10](https://github.com/user-attachments/assets/9316751f-3338-4900-90dc-bad7839a1eb5)
+Output masih kosong karena belum instansiasi objek dan belum mempunyai method untuk menampilkan data
+
+o Buat metode tampilkanData() dalam class Mahasiswa.<br>
+##### codingan untuk membuat method tampilkanData()
+```php
+//perintah untuk membuat method untuk menampilkan data mahasiswa
+    public function tampilkanData() {
+        //mengembalikan niali berupa string ketika method ini dipanggil
+        return "Mahasiswa ini bernama $this->nama dengan nim $this->nim dari jurusan $this->jurusan.";
+    }
+```
+Method ini dibuat untuk digunakan saat pemanggilan maka bisa mengembalikan nilai (return) dalam bentuk string atau kalimat
+
+##### codingan secara menyeluruh setelah ditambahkan method tampilkanData()
+```php
+<?php
+//perintah untuk membuka perintah atau dokumen php
+//perintah untuk membuat atau mendefinisikan class mahasiswa
+class mahasiswa {
+    //perintah untuk membuat atribut, dan memberikan hak akses kepada masing masing atribut, hak akses yang digunakan disini yaitu public
+    public $nama;
+    public $nim;
+    public $jurusan;
+
+    //membuat method construct untuk menginisialisasi atribut
+    public function __construct($nama, $nim, $jurusan){
+        //menginisialisasi  nilai atribut nama, nip, mataKuliah
+        $this->nama = $nama;
+        $this->nim = $nim;
+        $this->jurusan = $jurusan;
+    
+    }
+
+    //perintah untuk membuat method untuk menampilkan data mahasiswa
+    public function tampilkanData() {
+        //mengembalikan niali berupa string ketika method ini dipanggil
+        return "Mahasiswa ini bernama $this->nama dengan nim $this->nim dari jurusan $this->jurusan.";
+    }
+}
+?>
+```
+##### Hasil Output
+![11](https://github.com/user-attachments/assets/1756951e-2648-4424-9bbe-e16ce10b2a3e)
+Hasil output masih kosong karen method tersebut belum dipanggil untuk menampilakn datanya, begitu pula belum instansiasi, maka belum ada data yang akan di tampilkan
+
+o Instansiasi objek dari class Mahasiswa dan tampilkan data mahasiswa tersebut.<br>
+##### codingan untuk instansiasi objek dan menampilkan data mahasiswa
+```php
+//instasisasi objek dari class mahasiswa, membuat objek mahasiswa baru
+$mahasiswa1 = new Mahasiswa("cantik", "2301020272", "JKB");
+
+//perintah untuk menampilkan data mahasiswa
+echo $mahasiswa1->tampilkanData();
+echo "<br>";
+```
+##### codingan secara keseluruhan setalah membuat class, method tampilkanData dan instansiasi serta untuk menampilkan data
 ```php
 <?php
 //perintah untuk membuka perintah atau dokumen php
@@ -468,10 +548,19 @@ echo $mahasiswa1->tampilkanData();
 echo "<br>";
 ?>
 ```
+##### Hasil Output
+![12](https://github.com/user-attachments/assets/9ddb9d31-8a0d-4171-85e6-745d9565e8cb)
+Hasil output diatas menampilkan tampilan dari perintah untuk membuat instansiasi lalu ditampilkan dengan memanggil method 
+
 2. Encapsulation<br>
-3. Inheritance<br>
-4. Polymorphism<br>
-5. Abstraction<br>
+o Ubah atribut dalam class Mahasiswa menjadi private.
+o Buat metode getter dan setter untuk atribut nama, nim, dan jurusan.
+o Demonstrasikan akses ke atribut menggunakan metode getter dan setter.
+##### Codingan mengubah 
+
+4. Inheritance<br>
+5. Polymorphism<br>
+6. Abstraction<br>
 
 <h5>Proses Membuat Class, Encapsulation, Inheritance, Polymorphism dan Abstraction</h5>
 1. 
