@@ -286,13 +286,136 @@ echo $mahasiswa1->tampilkanData();
 
 
 ### Tugas Jobsheet 1
-##### Proses Pembuatan Class
+1. Implementasikan kelas Dosen dengan atribut nama, nip, dan mataKuliah.<br>
+##### Dibawah ini codingan untuk membuat class
+```php
+<?php
+//perintah untuk membuka perintah php
+//perintah untuk membuat dan pendefinisian class dosen
+class dosen{
+    //perintah untuk membuat atribut, dan memberikan hak akses kepada masing masing atribut, hak akses yang digunakan disini yaitu public
+    public $nama;
+    public $nip;
+    public $mataKuliah;
+
+     //perintah untuk membuat constructor untuk menginisialiasi atribut saat instansiasi objek
+    public function __construct($nama, $nip, $mataKuliah){
+        //menginisialisasi  nilai atribut nama, nip, mataKuliah
+        $this->nama = $nama;
+        $this->nip = $nip;
+        $this->mataKuliah = $mataKuliah;
+    
+    }
+}
+?>
+```
+Diatas adalah codingan untuk pembuatan class dan embuatan metode construct untuk mengisikan nilai ke atribut saat instasiasi objek. 
+##### Hasil Output pembuatan class
+![7](https://github.com/user-attachments/assets/044f136c-bb9a-410a-810f-05ff30766f53)
+Belum ada output karena belum instansiasi objek dan belum menampilkan data
+
+2. Buat metode tampilkanDosen() untuk menampilkan informasi dosen.<br>
+##### Codingan untuk membuat metode tampilkanDosen()
+```php
+ //membuat method tampilkanDosen untuk saat nanti dipanggil untuk menampilkan data dosen
+    public function tampilkanDosen(){
+        return "Dosen ini bernama $this->nama dengan nip $this->nip mengajar mata kuliah $this->mataKuliah. ";
+    }
+```
+##### Codingan dibawah ini untuk secara keseluruhan setelah ditambahkan metode tampilkanDosen()
+```php
+<?php
+//perintah untuk membuka perintah php
+//perintah untuk membuat dan pendefinisian class dosen
+class dosen{
+    //perintah untuk membuat atribut, dan memberikan hak akses kepada masing masing atribut, hak akses yang digunakan disini yaitu public
+    public $nama;
+    public $nip;
+    public $mataKuliah;
+
+     //perintah untuk membuat constructor untuk menginisialiasi atribut saat instansiasi objek
+    public function __construct($nama, $nip, $mataKuliah){
+        //menginisialisasi  nilai atribut nama, nip, mataKuliah
+        $this->nama = $nama;
+        $this->nip = $nip;
+        $this->mataKuliah = $mataKuliah;
+    
+    }
+
+    //membuat method tampilkanDosen untuk saat nanti dipanggil untuk menampilkan data dosen
+    public function tampilkanDosen(){
+        return "Dosen ini bernama $this->nama dengan nip $this->nip mengajar mata kuliah $this->mataKuliah. ";
+    }
+}
+?>
+```
+##### Hasil Output
+![8](https://github.com/user-attachments/assets/8a9ae46d-e5d4-4d59-8543-e2465d09a235)
+tetap kosong karena belum memanggil method dan belum instansiasi objek
+
+3. Buat objek dari kelas Dosen, dan gunakan metode tampilkanDosen() untuk
+menampilkan informasi tersebut. <br>
+##### codingan untuk membuat objek dan juga menampilkan data
+```php
+//instasiasi objek dari class Dosen
+$dosen1 = new Dosen("Taylor", "1234567890", "Bahasa Inggris");
+
+//menampilkan data dosen
+echo $dosen1->tampilkanDosen();
+```
+##### codingan secara keseluruhan setelah membuat objek, membuat method dan membuat class
+```php
+<?php
+//perintah untuk membuka perintah php
+//perintah untuk membuat dan pendefinisian class dosen
+class dosen{
+    //perintah untuk membuat atribut, dan memberikan hak akses kepada masing masing atribut, hak akses yang digunakan disini yaitu public
+    public $nama;
+    public $nip;
+    public $mataKuliah;
+
+     //perintah untuk membuat constructor untuk menginisialiasi atribut saat instansiasi objek
+    public function __construct($nama, $nip, $mataKuliah){
+        //menginisialisasi  nilai atribut nama, nip, mataKuliah
+        $this->nama = $nama;
+        $this->nip = $nip;
+        $this->mataKuliah = $mataKuliah;
+    
+    }
+
+    //membuat method tampilkanDosen untuk saat nanti dipanggil untuk menampilkan data dosen
+    public function tampilkanDosen(){
+        return "Dosen ini bernama $this->nama dengan nip $this->nip mengajar mata kuliah $this->mataKuliah. ";
+    }
+}
+
+//instasiasi objek dari class Dosen
+$dosen1 = new Dosen("Taylor", "1234567890", "Bahasa Inggris");
+
+//menampilkan data dosen
+echo $dosen1->tampilkanDosen();
+?>
+```
+
+##### hasil output
+![9](https://github.com/user-attachments/assets/1bc24b95-11d8-4a23-9d44-03155ab132ec)
+
+Hasil output di atas menampilkan data dosen yang stelah menerapkan konsep class objek dan method
+
+##### Proses Pembuatan Class Dosen
 1. Langkah pertama yaitu tuliskan perintah <?php?><br>
 2. selanjutnya membuat class Dosen dengan di didalamnya diisi dengan atribut nama, nip dan matakuliah<br>
 3. Selanjutnya membuat Construct, untuk menginisialisasi nilai baru yang akan dibuat nanti<br>
 4. Selanjutnya yaitu membuat method tampilkan dosen untuk menampilkan data dosen yang telah dibuat<br>
 5. selanjutnya yaitu melakukan Instansiasi dari class dosen, dengan memasukan nama, nim, dan mata kuliah<br>
 6. membuat perintah untuk menampilkan data dosen dengan memanggilkan fungsi tampilkanDosen<br>
+
+##### Penggunaan Metode pada Class Dosen
+1. method yang digunakan disini adalah method construct dan method tampilkanDosen<br>
+2. method consctruct adalah method khusus yang secara otomatis terpanggil saat membuat objek baru. Construct digunakan untuk mengatur nilai awal dari atribut. Constructor memastikan bahwa saat membuat objek baru maka nilai tersebut akan tersimpan ke dalam atribut tersebut.<br>
+3. method tampilkanDosen adalah method dibuat untuk menampilkan informasi dosen. Ketika method ini dipanggil maka method ini akan mengembalikan nilai berupa kalimat yang berisi informasik dosen seperti nama, nip , dan mata kuliah<br>
+
+
 
 
 # JoobSheet2
