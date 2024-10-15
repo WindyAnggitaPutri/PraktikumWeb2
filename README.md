@@ -46,6 +46,46 @@ Abstraction adalah prinsip yang menyembunyikan detail implementasi dan hanya men
 
 ### Instruksi Kerja Jobsheet 2
 1. Membuat Class dan Object<br>
+
+```php
+<?php
+<?php
+//perintah untuk membuka perintah atau dokumen php
+
+//perintah untuk membuat atau mendefinisikan class mahasiswa
+class mahasiswa {
+    //perintah untuk membuat atribut, dan memberikan hak akses kepada masing masing atribut, hak akses yang digunakan disini yaitu public
+    public $nama;
+    public $nim;
+    public $jurusan;
+
+    //membuat method construct untuk menginisialisasi atribut
+    public function __construct($nama, $nim, $jurusan){
+        $this->nama = $nama;
+        $this->nim = $nim;
+        $this->jurusan = $jurusan;
+    
+    }
+
+    //perintah untuk membuat method untuk menampilkan data mahasiswa
+    public function tampilkanData() {
+        //mengembalikanniali berupa string ketika method ini dipanggil
+        return "Mahasiswa ini bernama $this->nama dengan nim $this->nim dari jurusan $this->jurusan.";
+    }
+}
+
+//instasisasi objek dari class mahasiswa, membuat objek mahasiswa baru
+$mahasiswa1 = new Mahasiswa("cantik", "2301020272", "JKB");
+
+//perintah untuk menampilkan data mahasiswa
+echo $mahasiswa1->tampilkanData();
+echo "<br>";
+?>
+
+
+
+?>
+```
 2. Encapsulation<br>
 3. Inheritance<br>
 4. Polymorphism<br>
