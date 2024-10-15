@@ -33,11 +33,11 @@ Aksebilitas atau Hak Akses yang dimiliki atribut dan method : <br>
 <h1>JoobSheet2</h1>
 <h3>OOP atau Object Oriented Programming</h3> adalah paradigma pemrograman yang berfokus pada konsep objek. OOP memiliki konsep dasar yaitu Class, Objek, Atribut dan Method. Jika ada konsep dasar maka akan ada Prinsip dasar dari OOP yaitu : <br>
 1. Encapsulation<br>
-Encapsulation digunakan untuk menyembunyikan detail implementasi dan hanya memberikan akses melalui metode tersebut 
+Encapsulation digunakan untuk menyembunyikan detail implementasi dan hanya memberikan akses melalui metode tersebut<br>
 2. Inheritance<br>
-Inheritance merupakan prinsip dimana kelas daoat mewarisi properti dan metode dari kelas lainnya.
+Inheritance merupakan prinsip dimana kelas daoat mewarisi properti dan metode dari kelas lainnya.<br>
 3. Polymorphism<br>
-Polymorphism merupakan prinsip dimana metode yang sama dapat memiliki implementasi berbeda di dalam class yang berbeda.
+Polymorphism merupakan prinsip dimana metode yang sama dapat memiliki implementasi berbeda di dalam class yang berbeda.<br>
 4. Abstraction<br> 
 Abstraction adalah prinsip yang menyembunyikan detail implementasi dan hanya menampilkan fungsi penting<br>
 
