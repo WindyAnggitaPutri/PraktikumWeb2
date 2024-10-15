@@ -554,8 +554,6 @@ Hasil output diatas menampilkan tampilan dari perintah untuk membuat instansiasi
 
 2. Encapsulation<br>
 o Ubah atribut dalam class Mahasiswa menjadi private.
-o Buat metode getter dan setter untuk atribut nama, nim, dan jurusan.
-o Demonstrasikan akses ke atribut menggunakan metode getter dan setter.
 ##### Codingan mengubah atribut menjadi private
 ```php
 <?php
@@ -584,6 +582,7 @@ class mahasiswa {
 }
 ?>
 ```
+o Buat metode getter dan setter untuk atribut nama, nim, dan jurusan.
 ##### codingan membuat metode getter dan setter pada nama, nim dan jurusan
 ```php
 /*membuat metode getter pada atribut name, karena atribut name bersifat private, 
@@ -633,8 +632,8 @@ class mahasiswa {
     }
 ```
 
-Metode getter digunakan untuk bisa mengakses atribut yang bersifat private, sedangakan metode setter digunakan untuk menganti atau mengatur nilai pada atribut yang bersifat private tadi. 
-
+Metode getter digunakan untuk bisa mengakses atribut yang bersifat private, sedangakan metode setter digunakan untuk menganti atau mengatur nilai pada atribut yang bersifat private tadi. <br>
+o Demonstrasikan akses ke atribut menggunakan metode getter dan setter
 ##### mendemostrasikan method get dan set 
 ```php
 <?php
@@ -766,12 +765,8 @@ echo "<br>";
 ![19](https://github.com/user-attachments/assets/08220053-2dfa-46bb-bf0a-76842116d4ab)
 Hasil Output di atas berhasil setelah melakukan Encapsulation.
 
-4. Inheritance<br>
+3. Inheritance<br>
 o Buat class Pengguna dengan atribut nama dan metode getNama().<br>
-o Buat class Dosen yang mewarisi class Pengguna dan tambahkan atribut
-mataKuliah.<br>
-o Instansiasi objek dari class Dosen dan tampilkan data dosen.<br>
-
 ##### Codingan untuk membuat class pengguna dan method getNama()
 ```php
 <?php
@@ -793,7 +788,8 @@ o Instansiasi objek dari class Dosen dan tampilkan data dosen.<br>
 }
 ?>
 ```
-
+o Buat class Dosen yang mewarisi class Pengguna dan tambahkan atribut
+mataKuliah.<br>
 ##### codingan membuat class dosen yang mewarisi class pengguna dan menambahkan atribut mataKuliah
 ```php
 <?php
@@ -818,7 +814,7 @@ class Dosen extends Pengguna {
 }
 ?>
 ```
-
+o Instansiasi objek dari class Dosen dan tampilkan data dosen.<br>
 ##### Codingan untuk mengintansiasi objek dan menampilkan data
 ###### a.perintah untuk membuat method tampilDataDosen()
 ```php
@@ -1007,7 +1003,7 @@ echo "<br><hr>";
 ##### Hasil Output 
 ![20](https://github.com/user-attachments/assets/0d69dd9c-8390-496c-9f55-11fedda538e2)
 
-5. Polymorphism<br>
+4. Polymorphism<br>
 o Buat class Pengguna dengan metode aksesFitur().<br>
 ##### Codingan membuat class pengguna dengan metode akses Fitur()
 ```php
