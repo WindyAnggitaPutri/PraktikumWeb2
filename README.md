@@ -224,7 +224,7 @@ echo "<br><br>";
 #### Hasil output setelah penggantian nim
 ![5](https://github.com/user-attachments/assets/57229629-e236-4f23-b4d3-821e7a7a5801)
 
-#### Dibawah ini adalah codingan secara menyeluruh setelah menambah metode setter dan akan mengganti nilai pada atribut nim
+#### Dibawah ini adalah codingan secara menyeluruh setelah menambah metode setter dan akan mengganti nilai pada atribut nim dan akan menampilkan data
 ```php
 <?php
 //perintah untuk membuka perintah php
