@@ -148,6 +148,13 @@ o Gunakan metode ini untuk mengubah jurusan dari objek yang sudah dibuat.<br>
     }
 
 ```
+#### Setelah membuat metode updateJurusan, maka tambahkan script ini untuk menampilkan bagian jurusan yang telah berhasil diubah menggunakan metode updateJurusan()
+```php
+//Menampilkan bagian jurusan yang telah diubah
+echo $mahasiswa1->updateJurusan("JREM");
+echo "<br>";
+```
+
 #### Codingan secara keseluruhan apabila method updateJurusan() telah ditambahkan
 ```php
 <?php
@@ -196,8 +203,86 @@ echo "<br>";
 Output di atas menampilkan bahwa jurusan telah diubah
 
 4. Penggunaan Atribut dan Method<br>
-o Ubah nilai atribut nim dari onjek Mahasiswa menggunakan metode setter.<br>
+o Ubah nilai atribut nim dari objek Mahasiswa menggunakan metode setter.<br>
 o Tampilkan data mahasiswa yang sudah diperbarui dengan memanggil metode tampilkanData().<br>
+#### Untuk mengubah atribut nim dengan metode setter, artinya kita harus membuat terlebih dahulu
+#### Berikut codingan untuk membuat metode setter
+```php
+ //perintah menggunakan metode setter untuk mengubah nim 
+    public function setNim($nim_baru){
+        $this->nim = $nim_baru;
+        return "nim telah diganti menjadi $this->nim.";
+    }
+```
+Metode setter digunakan untuk mengubah suatu nilai pada atribut. 
+#### Setelah membuat metode setter, maka tambahkan script ini untuk menampilkan bagian nim yang telah berhasil diubah menggunakan metode setter
+```php
+//Menampilkan bagian nim yang telah diubah menggunakan metode setter
+echo $mahasiswa1->setNim("250102072");
+echo "<br><br>";
+```
+#### Hasil output setelah penggantian nim
+![5](https://github.com/user-attachments/assets/57229629-e236-4f23-b4d3-821e7a7a5801)
+
+#### Dibawah ini adalah codingan secara menyeluruh setelah menambah metode setter dan akan mengganti nilai pada atribut nim
+```php
+<?php
+//perintah untuk membuka perintah php
+//perintah untuk membuat dan pendefinisian class mahasiswa
+class Mahasiswa{
+    //melakukan pendefinisian atribut 
+    public $nama;
+    public $nim;
+    public $jurusan;
+
+     //perintah untuk membuat constructor untuk menginisialiasi atribut saat instansiasi objek
+     public function __construct($nama, $nim, $jurusan){
+        $this->nama = $nama;
+        $this->nim = $nim;
+        $this->jurusan = $jurusan;
+    }
+
+     //perintah untuk membuat metode tambahan
+     public function updateJurusan($jurusan_baru){
+        $this->jurusan = $jurusan_baru;
+        return "Jurusan telah diubah menjadi $this->jurusan.";
+    }
+
+    //perintah untuk membuat method tampilkanData untuk menampilkan data mahasiswa
+    public function tampilkanData(){
+        return "Mahasiswa ini bernama $this->nama dengan nim $this->nim berasal dari jurusan $this->jurusan.";
+    }
+
+    //perintah menggunakan metode setter untuk mengubah nim 
+    public function setNim($nim_baru){
+        $this->nim = $nim_baru;
+        return "nim telah diganti menjadi $this->nim.";
+    }
+}
+
+//instasiasi objek dari class mahasiswa
+$mahasiswa1 = new Mahasiswa("Windy", "230102072", "JKB");
+echo "<br>";
+
+//Menampilkan data mahasiswa
+echo $mahasiswa1->tampilkanData();
+echo "<br><br>";
+
+//Menampilkan bagian jurusan yang telah diubah
+echo $mahasiswa1->updateJurusan("JREM");
+echo "<br>";
+
+//Menampilkan bagian nim yang telahdiubah menggunakan metode setter
+echo $mahasiswa1->setNim("250102072");
+echo "<br><br>";
+
+//Menampilkan data mahasiswa setelah jurusan dan nimnya diubah
+echo $mahasiswa1->tampilkanData();
+?>
+```
+
+#### Hasil Output setelah jurusan dan nim di ubah lalu ditampilkan
+![6](https://github.com/user-attachments/assets/bb59f33c-b180-4ac4-a744-c5b227a0a70d)
 
 
 ### Tugas Jobsheet 1
