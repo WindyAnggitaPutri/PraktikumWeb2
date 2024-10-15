@@ -1,5 +1,5 @@
-# PraktikumWeb2
-# JoobSheet1
+# PRAKTIKUMWEB2
+# JOBSHEET1
 ### OOP atau Object Oriented Programming 
 adalah suatu metode pemrograman yang berfokus atau berorientasi pada objek. OOP adalah bentuk suatu pendekatan pengembangan perangkat lunak yang memiliki struktur berbasis atau berorientasi pada objek yang memiliki atribut dan method yang saling terhubung satu sama lain.
 ##### 1. Class
@@ -418,7 +418,7 @@ Hasil output di atas menampilkan data dosen yang stelah menerapkan konsep class 
 
 
 
-# JoobSheet2
+# JOBSHEET2
 ### OOP atau Object Oriented Programming
 adalah paradigma pemrograman yang berfokus pada konsep objek. OOP memiliki konsep dasar yaitu Class, Objek, Atribut dan Method. Jika ada konsep dasar maka akan ada Prinsip dasar dari OOP yaitu : <br>
 1. Encapsulation<br>
