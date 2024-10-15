@@ -763,7 +763,7 @@ echo "<br>";
 ?>
 ```
 ##### Hasil Output
-![13](https://github.com/user-attachments/assets/f6394102-ea12-4f91-9e86-3bd85feb68ee)
+![19](https://github.com/user-attachments/assets/08220053-2dfa-46bb-bf0a-76842116d4ab)
 Hasil Output di atas berhasil setelah melakukan Encapsulation.
 
 4. Inheritance<br>
@@ -1005,7 +1005,7 @@ echo "<br><hr>";
 ?>
 ```
 ##### Hasil Output 
-![15](https://github.com/user-attachments/assets/a42cf718-8779-4319-8e3e-8e76c32db0ab)
+![20](https://github.com/user-attachments/assets/0d69dd9c-8390-496c-9f55-11fedda538e2)
 
 5. Polymorphism<br>
 o Buat class Pengguna dengan metode aksesFitur().<br>
