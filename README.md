@@ -1496,8 +1496,21 @@ Hasil di atas adalah error karena class dosen tidak mengimplementasikan aksesFit
 
 ##### Sumber Kode
 1. <b>class mahasiswa</b> adalah class yang dibuat dengan nama mahasiswa untuk menampung beberapa data. data yang nantinya akan di buat dengan instansiasi objek dari class mahasiswa
-2. 
-
+2. <b>public $nama</b> adalah contoh atribut yang memiliki hak akses public, yang dimana dapat di akses oleh class manapun.
+3. <b>private $nama</b> adalah contoh atribut yang dibuat dengan hak akses privat, yang dimana tidak bisa di akses oleh luar class
+4. <b>protected $nama</b> adalah contoh atribut yang dibuat dengan hak  akses protected, dimana atribut ini hanya dapat diakses dengan class yang mendeklarasikannya dan class turunannya.
+5. <b>public function __construct</b> adalah  metode yang dibuat untuk menginisialisasi atribut saat instansiasi objek nanti.
+6. <b>public function tampilkanData()</b> adalah metode yang akan digunakan untuk menampilkan data saat dipanggil dan akan mengembalikan nilai berupa string.
+7. <b> public function getNama()</b> adalah method getter yang digunakan untuk mengakses atribut yang bersifat private
+8. <br>publuc function setName($nama_baru)</b> adakah method setter yang digunakan untuk mengubah atau mengatur nilai atribut yang bersifat private.
+9. <br>$mahasiswa 1 = new Mahasiswa</b> adalah contoh instasiasi objek dari class Mahasiswa yang dimana ini adalah proses pembuatan objek, saat instansiasi maka method construct akan secara otomatis terpanggil.
+10. <br>echo $mahasiswa1->setNama("Mona Lisa");</b> adalah contoh pemanggilan method setter untuk mengganti nilai dalam atribut yang bersifat private
+11. <br>echo $mahasiswa1->tampilkanData();</b> adalah contoh pemanggilan method untuk menampilkan data setelah melakukan instansiasi objek
+12. <b>Class Dosen extends Pengguna</b> adalah contoh pembuatan class dari turunan class induk (class pengguna).
+13. <b>parent::__construct($nama);</b> adalah perintah untuk memanggil contructor dari class induk (class pengguna)
+14. <b>$this->matakuliah = $matakuliah;</b> perintah untuk melakukan inisialisasi atribut
+15. <b> abstract class Pengguna </b> adalah contoh pembuatan class yang dibuat absctract
+16. <b>abstract public function aksesFitur();</b> adalah contoh pembuatan abstract method.
 
 
 
