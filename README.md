@@ -49,7 +49,6 @@ Abstraction adalah prinsip yang menyembunyikan detail implementasi dan hanya men
 
 ```php
 <?php
-<?php
 //perintah untuk membuka perintah atau dokumen php
 
 //perintah untuk membuat atau mendefinisikan class mahasiswa
@@ -80,10 +79,6 @@ $mahasiswa1 = new Mahasiswa("cantik", "2301020272", "JKB");
 //perintah untuk menampilkan data mahasiswa
 echo $mahasiswa1->tampilkanData();
 echo "<br>";
-?>
-
-
-
 ?>
 ```
 2. Encapsulation<br>
