@@ -49,6 +49,8 @@ Abstraction adalah prinsip yang menyembunyikan detail implementasi dan hanya men
 4. Polymorphism<br>
 5. Abstraction<br>
 
+<h5>Proses Membuat Class, Encapsulation, Inheritance, Polymorphism dan Abstraction</h5>
+1. 
 
 
 
