@@ -46,11 +46,159 @@ echo "<br><br>";
 ?>
 
 ```
+#### Hasil Output
+![image](https://github.com/user-attachments/assets/55e8fdab-a575-4a73-b9f6-78dfac13ae82)
 
+Hasil output di atas tidak berhasil karena belum dibuatnya construct.
+Constrcuct disini berfungsi sebagai perintah ibaratnya seperti mengisi nilai yang baru dibuat untuk dimasukan ke dalam atribut. Jadi jika sudah instansiasi tapi belum membuat construct maka nilai  yang dibuat baru tadi belum bisa diisikan ke dalam atributnya. Jika belum dibuatnya constrcu maka atribut tersebut belum ada nilainya, maka harus diisi manual, karena atribut tersebut kosong atau tidak terinisialisasi dengan benar.
+#### Contoh codingan secara manual jika tidak menggunakan construct
+```php
+<?php
+//perintah untuk membuka perintah php
+//perintah untuk membuat dan pendefinisian class mahasiswa
+class Mahasiswa{
+    //melakukan pendefinisian atribut 
+    public $nama;
+    public $nim;
+    public $jurusan;
 
-3. Implementasi Constructor<br>
-4. Membuat Metode Tambahan<br>
-5. Penggunaan Atribut dan Method<br>
+    //perintah untuk membuat method tampilkanData untuk menampilkan data mahasiswa
+    public function tampilkanData(){
+        return "Mahasiswa ini bernama $this->nama dengan nim $this->nim berasal dari jurusan $this->jurusan.";
+    }
+}
+
+//instasiasi objek dari class mahasiswa
+$mahasiswa1 = new Mahasiswa();
+$mahasiswa1->nama = "Windy";
+$mahasiswa1->nim = "230102072";
+$mahasiswa1->jurusan = "JKB";
+echo "<br>";
+
+//Menampilkan data mahasiswa
+echo $mahasiswa1->tampilkanData();
+echo "<br><br>";
+?>
+```
+#### Dan Hasil Output jika memasukan nilai secara manual yaitu
+![2](https://github.com/user-attachments/assets/9f9e21ae-de06-4069-9a82-fa5352587c94)
+Nilai berhasil dimasukkan tetapi secara manual, maka dari itu langkah selanjutnya yaitu membuat class dengan menambahkan construct
+
+2. Implementasi Constructor<br>
+o Tambahkan constructor pada kelas Mahasiswa yang akan menginisialisasi
+atribut nama, nim, dan jurusan.<br>
+o Gunakan constructor ini untuk mengatur nilai awal dari atribut saat objek dibuat.<br>
+
+#### Codingan Untuk Menambahkan Method Construct
+```php
+ //perintah untuk membuat constructor untuk menginisialiasi atribut saat instansiasi objek
+     public function __construct($nama, $nim, $jurusan){
+        $this->nama = $nama;
+        $this->nim = $nim;
+        $this->jurusan = $jurusan;
+    }
+```
+#### Dibawah ini codingan secara keseluruhan bila ditambahkan construct dan tidak menggunakan cara manual untuk memasukan nilai yang baru dibuat
+```php
+<?php
+//perintah untuk membuka perintah php
+//perintah untuk membuat dan pendefinisian class mahasiswa
+class Mahasiswa{
+    //melakukan pendefinisian atribut 
+    public $nama;
+    public $nim;
+    public $jurusan;
+
+     //perintah untuk membuat constructor untuk menginisialiasi atribut saat instansiasi objek
+     public function __construct($nama, $nim, $jurusan){
+        $this->nama = $nama;
+        $this->nim = $nim;
+        $this->jurusan = $jurusan;
+    }
+
+    //perintah untuk membuat method tampilkanData untuk menampilkan data mahasiswa
+    public function tampilkanData(){
+        return "Mahasiswa ini bernama $this->nama dengan nim $this->nim berasal dari jurusan $this->jurusan.";
+    }
+}
+
+//instasiasi objek dari class mahasiswa
+$mahasiswa1 = new Mahasiswa("Windy", "230102072", "JKB");
+echo "<br>";
+
+//Menampilkan data mahasiswa
+echo $mahasiswa1->tampilkanData();
+echo "<br><br>";
+?>
+```
+#### Hasil Output
+![3](https://github.com/user-attachments/assets/396330f8-709e-4f83-88db-606e9268bf25)
+Output di atas berhasil karena menggunakan construct dan nilai berhasil di masukan ke dalam atribut
+
+3. Membuat Metode Tambahan<br>
+o Buat metode updateJurusan() dalam kelas Mahasiswa yang memungkinkan
+perubahan jurusan.<br>
+o Gunakan metode ini untuk mengubah jurusan dari objek yang sudah dibuat.<br>
+#### Codingan Untuk Menambahkan Method updateJurusan()
+```php
+ //perintah untuk membuat metode tambahan
+     public function updateJurusan($jurusan_baru){
+        $this->jurusan = $jurusan_baru;
+        return "Jurusan telah diubah menjadi $this->jurusan.";
+    }
+
+```
+#### Codingan secara keseluruhan apabila method updateJurusan() telah ditambahkan
+```php
+<?php
+//perintah untuk membuka perintah php
+//perintah untuk membuat dan pendefinisian class mahasiswa
+class Mahasiswa{
+    //melakukan pendefinisian atribut 
+    public $nama;
+    public $nim;
+    public $jurusan;
+
+     //perintah untuk membuat constructor untuk menginisialiasi atribut saat instansiasi objek
+     public function __construct($nama, $nim, $jurusan){
+        $this->nama = $nama;
+        $this->nim = $nim;
+        $this->jurusan = $jurusan;
+    }
+
+     //perintah untuk membuat metode tambahan
+     public function updateJurusan($jurusan_baru){
+        $this->jurusan = $jurusan_baru;
+        return "Jurusan telah diubah menjadi $this->jurusan.";
+    }
+
+    //perintah untuk membuat method tampilkanData untuk menampilkan data mahasiswa
+    public function tampilkanData(){
+        return "Mahasiswa ini bernama $this->nama dengan nim $this->nim berasal dari jurusan $this->jurusan.";
+    }
+}
+
+//instasiasi objek dari class mahasiswa
+$mahasiswa1 = new Mahasiswa("Windy", "230102072", "JKB");
+echo "<br>";
+
+//Menampilkan data mahasiswa
+echo $mahasiswa1->tampilkanData();
+echo "<br><br>";
+
+//Menampilkan bagian jurusan yang telah diubah
+echo $mahasiswa1->updateJurusan("JREM");
+echo "<br>";
+?>
+```
+#### Hasil Output
+![4](https://github.com/user-attachments/assets/f1383145-0c4f-4766-af27-f13448a43891)
+Output di atas menampilkan bahwa jurusan telah diubah
+
+4. Penggunaan Atribut dan Method<br>
+o Ubah nilai atribut nim dari onjek Mahasiswa menggunakan metode setter.<br>
+o Tampilkan data mahasiswa yang sudah diperbarui dengan memanggil metode tampilkanData().<br>
+
 
 ### Tugas Jobsheet 1
 ##### Proses Pembuatan Class
