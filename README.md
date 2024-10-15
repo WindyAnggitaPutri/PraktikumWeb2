@@ -20,6 +20,33 @@ Aksebilitas atau Hak Akses yang dimiliki atribut dan method : <br>
 o Buat class Mahasiswa yang memiliki atribut nama, nim, dan jurusan.<br>
 o Buat metode tampilkanData() dalam class Mahasiswa.<br>
 o Instansiasi objek dari class Mahasiswa dan tampilkan data mahasiswa tersebut.<br>
+```php
+<?php
+//perintah untuk membuka perintah php
+//perintah untuk membuat dan pendefinisian class mahasiswa
+class Mahasiswa{
+    //melakukan pendefinisian atribut 
+    public $nama;
+    public $nim;
+    public $jurusan;
+
+    //perintah untuk membuat method tampilkanData untuk menampilkan data mahasiswa
+    public function tampilkanData(){
+        return "Mahasiswa ini bernama $this->nama dengan nim $this->nim berasal dari jurusan $this->jurusan.";
+    }
+}
+
+//instasiasi objek dari class mahasiswa
+$mahasiswa1 = new Mahasiswa("Windy", "230102072", "JKB");
+echo "<br>";
+
+//Menampilkan data mahasiswa
+echo $mahasiswa1->tampilkanData();
+echo "<br><br>";
+?>
+
+```
+
 
 3. Implementasi Constructor<br>
 4. Membuat Metode Tambahan<br>
