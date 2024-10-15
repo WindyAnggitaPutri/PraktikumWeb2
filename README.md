@@ -1502,15 +1502,1242 @@ Hasil di atas adalah error karena class dosen tidak mengimplementasikan aksesFit
 5. <b>public function __construct</b> adalah  metode yang dibuat untuk menginisialisasi atribut saat instansiasi objek nanti.
 6. <b>public function tampilkanData()</b> adalah metode yang akan digunakan untuk menampilkan data saat dipanggil dan akan mengembalikan nilai berupa string.
 7. <b> public function getNama()</b> adalah method getter yang digunakan untuk mengakses atribut yang bersifat private
-8. <br>publuc function setName($nama_baru)</b> adakah method setter yang digunakan untuk mengubah atau mengatur nilai atribut yang bersifat private.
-9. <br>$mahasiswa 1 = new Mahasiswa</b> adalah contoh instasiasi objek dari class Mahasiswa yang dimana ini adalah proses pembuatan objek, saat instansiasi maka method construct akan secara otomatis terpanggil.
-10. <br>echo $mahasiswa1->setNama("Mona Lisa");</b> adalah contoh pemanggilan method setter untuk mengganti nilai dalam atribut yang bersifat private
-11. <br>echo $mahasiswa1->tampilkanData();</b> adalah contoh pemanggilan method untuk menampilkan data setelah melakukan instansiasi objek
+8. <b>publuc function setName($nama_baru)</b> adakah method setter yang digunakan untuk mengubah atau mengatur nilai atribut yang bersifat private.
+9. <b>$mahasiswa 1 = new Mahasiswa</b> adalah contoh instasiasi objek dari class Mahasiswa yang dimana ini adalah proses pembuatan objek, saat instansiasi maka method construct akan secara otomatis terpanggil.
+10. <b>echo $mahasiswa1->setNama("Mona Lisa");</b> adalah contoh pemanggilan method setter untuk mengganti nilai dalam atribut yang bersifat private
+11. <b>echo $mahasiswa1->tampilkanData();</b> adalah contoh pemanggilan method untuk menampilkan data setelah melakukan instansiasi objek
 12. <b>Class Dosen extends Pengguna</b> adalah contoh pembuatan class dari turunan class induk (class pengguna).
 13. <b>parent::__construct($nama);</b> adalah perintah untuk memanggil contructor dari class induk (class pengguna)
 14. <b>$this->matakuliah = $matakuliah;</b> perintah untuk melakukan inisialisasi atribut
 15. <b> abstract class Pengguna </b> adalah contoh pembuatan class yang dibuat absctract
 16. <b>abstract public function aksesFitur();</b> adalah contoh pembuatan abstract method.
 
+#JOBSHEET3
+**Object-Oriented Programming (OOP)** dalam PHP memungkinkan pengembangan
+perangkat lunak yang lebih terstruktur dan modular. Konsep-konsep seperti Inheritance,
+Polymorphism, Encapsulation, dan Abstraction adalah pilar penting yang membuat
+OOP efisien. Dengan menguasai konsep-konsep ini, pengembang dapat membuat kode
+yang lebih fleksibel, dapat digunakan kembali, dan mudah dipelihara.
+
+**Prinsip OOP**
+1. Inheritance<br>
+Inheritance adalah konsep di mana sebuah kelas dapat mewarisi atribut dan
+metode dari kelas lain. Ini memungkinkan penggunaan kembali kode dan
+menciptakan hubungan hierarkis antara kelas.<br>
+2. Polymorphism<br>
+Polymorphism memungkinkan satu metode untuk memiliki banyak bentuk,
+biasanya melalui metode overriding di kelas turunan. Dengan ini, objek dapat
+diperlakukan sebagai bentuk umum dan khusus sesuai kebutuhan.<br>
+3. Encapsulation<br>
+Encapsulation menyembunyikan detail internal dari sebuah objek dan hanya
+membiarkan interaksi melalui metode publik yang tersedia, menjaga data internal
+tetap aman dari perubahan tak terduga.<br>
+4. Abstraction<br>
+Abstraction adalah proses menyembunyikan detail implementasi internal dan
+hanya menampilkan fungsionalitas utama kepada pengguna. Ini biasanya dicapai
+dengan menggunakan kelas abstrak atau antarmuka.<br>
+
+### Instruksi Kerja
+1. Inheritance<br>
+o Buat kelas Person dengan atribut name dan metode getName().<br>
+##### codingan untuk membuat class person
+```php
+<?php
+//perintah untuk membuka perintah php
+//perintah untuk membuat class bernama person
+class Person {
+    //perintah untuk membuat atribut dengan hak akses protected
+    protected $name;
+
+    //perintah membuat method construct untuk menginisialisasi atribut saat instansiasi objek
+    public function __construct($name){
+        //inisialisasi atribut name
+        $this->name = $name;
+    }
+
+    //perintah untuk membuat method getter yang dimana berfungsi untuk mengakses atribut yang bersifat protected
+    public function getName(){
+        //mengembalikan nilai
+        return $this->name;
+    }
+}
+?>
+```
+o Buat kelas Student yang mewarisi dari Person dan tambahkan atribut studentID
+serta metode getStudentID().<br>
+##### codingan untuk membuat class student yang mewarisi person dan menambahkan atribut
+```php
+<?php
+//perintah untuk membuat class turunan student dari person
+class Student extends Person{
+    //perintah untuk menambahkan atribut studentID 
+    public $studentID;
+
+    //perintah membuat method construct untuk menginisialisasi atribut saat instansiasi objek
+    public function __construct($name, $studentID){
+        //perintah untuk memanggil constructor yang ada di class induk
+        parent::__construct($name);
+        //inisialisasi atribut
+        $this->studentID = $studentID;
+    }
+
+    //perintah untuk membuat method getter untuk mengakses atribut
+    public function getStudentID(){
+        //mengembalikan nilai
+        return $this->studentID;
+    }
+}
+?>
+```
+##### perintah untuk instansiasi objek dan menampilkan
+```php
+<?php
+//intansiasi objek dari class student
+$student1 = new Student("Windy", "12334566");
+//peerintah untuk menampilkan nama dan ID menggunakan metode yang sudah sesuai dan yang sudag tadi dibuat
+echo $student1->getName(). " Mempunyai ID " . $student1->getStudentID();
+?>
+```
+##### codingan secara menyeluruhan inheritance 
+```php
+<?php
+//perintah untuk membuka perintah php
+//perintah untuk membuat class bernama person
+class Person {
+    //perintah untuk membuat atribut dengan hak akses protected
+    protected $name;
+
+    //perintah membuat method construct untuk menginisialisasi atribut saat instansiasi objek
+    public function __construct($name){
+        //inisialisasi atribut name
+        $this->name = $name;
+    }
+
+    //perintah untuk membuat method getter yang dimana berfungsi untuk mengakses atribut yang bersifat protected
+    public function getName(){
+        //mengembalikan nilai
+        return $this->name;
+    }
+}
+
+//perintah untuk membuat class turunan student dari person
+class Student extends Person{
+    //perintah untuk menambahkan atribut studentID 
+    public $studentID;
+
+    //perintah membuat method construct untuk menginisialisasi atribut saat instansiasi objek
+    public function __construct($name, $studentID){
+        //perintah untuk memanggil constructor yang ada di class induk
+        parent::__construct($name);
+        //inisialisasi atribut
+        $this->studentID = $studentID;
+    }
+
+    //perintah untuk membuat method getter untuk menggakse atribut
+    public function getStudentID(){
+        //mengembalikan nilai
+        return $this->studentID;
+    }
+}
+
+//intansiasi objek dari class student
+$student1 = new Student("Windy", "12334566");
+//peerintah untuk menampilkan nama dan ID menggunakan metode yang sudah sesuai dan yang sudag tadi dibuat
+echo $student1->getName(). " Mempunyai ID " . $student1->getStudentID();
+?>
+```
+##### Hasil Output
+![24](https://github.com/user-attachments/assets/eaccf2a4-8593-439c-99a3-d65f04c841da)
+hasil output di atas menunjukan bahwa telah berhasil melakukan inheritance
+
+2. Polymorphism<br>
+o Buat kelas Teacher yang juga mewarisi dari Person dan tambahkan atribut
+teacherID.<br>
+##### codingan membuat class teacher
+```php
+<?php
+//perintah untuk membuat class turunan teacher dari person
+class Teacher extends Person{
+    //perintah untuk menambahkan atribut teacherID
+    public $teacherID;
+
+    //perintah membuat method construct untuk menginisialisasi atribut saat instansiasi objek
+    public function __construct($name, $teacherID){
+        //perintah untuk memanggil constructor yang ada di class induk
+        parent::__construct($name);
+        //inisialisasi atribut
+        $this->teacherID = $teacherID;
+    }
+
+}
+?>
+```
+o Override metode getName() di kelas Student dan Teacher untuk menampilkan
+format berbeda.<br>
+###### a. codingan getName() di class student
+```php
+<?php
+//perintah untuk membuat method getName untuk tujuan override
+    public function getName(){
+        //mengembalikan nilai
+        return "Mahasiswa ini bernama  $this->name";
+    }
+?>
+```
+###### b. codingan seluruh class student setelah ditambahkan getName()
+```php
+<?php
+//perintah untuk membuat class turunan student dari person
+class Student extends Person{
+    //perintah untuk menambahkan atribut studentID
+    public $studentID;
+
+    //perintah membuat method construct untuk menginisialisasi atribut saat instansiasi objek
+    public function __construct($name, $studentID){
+        //perintah untuk memanggil constructor yang ada di class induk
+        parent::__construct($name);
+        //inisialisasi atribut
+        $this->studentID = $studentID;
+    }
+
+    //perintah untuk membuat method getter untuk menggakse atribut
+    public function getStudentID(){
+        //mengembalikan nilai
+        return $this->studentID;
+    }
+
+    //perintah untuk membuat method getName untuk tujuan override
+    public function getName(){
+        //mengembalikan nilai
+        return "Mahasiswa ini bernama  $this->name";
+    }
+
+}
+?>
+```
+
+###### c. codingan getName() di class teacher
+```php
+<?php
+//perintah untuk membuat method getName untuk tujuan override
+    public function getName(){
+        //mengembalikan nilai
+        return "Guru ini bernama  $this->name";
+    }
+?>
+```
+
+###### d. codingan seluruh class teacher setelah ditambahkan getName()
+```php
+<?php
+//perintah untuk membuat class turunan teacher dari person
+class Teacher extends Person{
+    //perintah untuk menambahkan atribut teacherID
+    public $teacherID;
+
+    //perintah membuat method construct untuk menginisialisasi atribut saat instansiasi objek
+    public function __construct($name, $teacherID){
+        //perintah untuk memanggil constructor yang ada di class induk
+        parent::__construct($name);
+        //inisialisasi atribut
+        $this->teacherID = $teacherID;
+    }
+
+     //perintah untuk membuat method getName untuk tujuan override
+    public function getName(){
+        //mengembalikan nilai
+        return "Guru ini bernama  $this->name";
+    }
+
+}
+?>
+```
+##### Instansiasi Objek dan Menampilkan data
+```php
+<?php
+//instansiasi objek dari class student
+$student1 = new Student("Windy", "12334566");
+
+//menampilkan nama dan id denggan menggunakan method getName dan getStudentID
+echo $student1->getName(). " Mempunyai ID " . $student1->getStudentID();
+echo "<br>";
+
+//instansiasi objek dari class teacher
+$teacher1 = new Teacher("Amanda", "5433211");
+
+//menampilkan nama denggan menggunakan method getName
+echo $teacher1->getName();
+?>
+```
+###### Codingan seluruhnya steelah melalukan Polymotrphism
+```php
+<?php
+//perintah untuk membuka perintah php
+//perintah untuk membuat class bernama person
+class Person {
+    //perintah untuk membuat atribut dengan hak akses protected
+    protected $name;
+
+    //perintah membuat method construct untuk menginisialisasi atribut saat instansiasi objek
+    public function __construct($name){
+        $this->name = $name;
+    }
+
+     //perintah untuk membuat method getter yang dimana berfungsi untuk mengakses atribut yang bersifat protected
+    public function getName(){
+        //mengembalikan nilai
+        return $this->name;
+    }
+}
+//perintah untuk membuat class turunan student dari person
+class Student extends Person{
+    //perintah untuk menambahkan atribut studentID
+    public $studentID;
+
+    //perintah membuat method construct untuk menginisialisasi atribut saat instansiasi objek
+    public function __construct($name, $studentID){
+        //perintah untuk memanggil constructor yang ada di class induk
+        parent::__construct($name);
+        //inisialisasi atribut
+        $this->studentID = $studentID;
+    }
+
+    //perintah untuk membuat method getter untuk menggakse atribut
+    public function getStudentID(){
+        //mengembalikan nilai
+        return $this->studentID;
+    }
+
+    //perintah untuk membuat method getName untuk tujuan override
+    public function getName(){
+        //mengembalikan nilai
+        return "Mahasiswa ini bernama  $this->name";
+    }
+
+}
+
+//perintah untuk membuat class turunan teacher dari person
+class Teacher extends Person{
+    //perintah untuk menambahkan atribut teacherID
+    public $teacherID;
+
+    //perintah membuat method construct untuk menginisialisasi atribut saat instansiasi objek
+    public function __construct($name, $teacherID){
+        //perintah untuk memanggil constructor yang ada di class induk
+        parent::__construct($name);
+        //inisialisasi atribut
+        $this->teacherID = $teacherID;
+    }
+
+     //perintah untuk membuat method getName untuk tujuan override
+    public function getName(){
+        //mengembalikan nilai
+        return "Guru ini bernama  $this->name";
+    }
+
+}
+
+//instansiasi objek dari class student
+$student1 = new Student("Windy", "12334566");
+
+//menampilkan nama dan id denggan menggunakan method getName dan getStudentID
+echo $student1->getName(). " Mempunyai ID " . $student1->getStudentID();
+echo "<br>";
+
+//instansiasi objek dari class teacher
+$teacher1 = new Teacher("Amanda", "5433211");
+
+//menampilkan nama denggan menggunakan method getName
+echo $teacher1->getName();
+?>
+```
+
+##### Hasil Output
+![25](https://github.com/user-attachments/assets/8cfb105d-cd8e-4ae6-bee3-0d16acb4ee69)
+Hasil Output di atas berhasil setelah melakuakn polymorphism
+
+3. Encapsulation<br>
+o Ubah atribut name dan studentID dalam kelas Student menjadi private.<br>
+##### codingan stelah atribut studentID menjadi private
+```php
+<?php
+//perintah untuk membuat class turunan student dari person
+class Student extends Person{
+    //perintah untuk menambahkan atribut studentID
+    private $studentID;
+
+    //perintah membuat method construct untuk menginisialisasi atribut saat instansiasi objek
+    public function __construct($name, $studentID){
+        //perintah untuk memanggil constructor yang ada di class induk
+        parent::__construct($name);
+        //inisialisasi atribut
+        $this->studentID = $studentID;
+    }
+
+    //perintah untuk membuat method getter untuk menggakse atribut
+    public function getStudentID(){
+        //mengembalikan nilai
+        return $this->studentID;
+    }
+     //perintah untuk membuat method getName untuk tujuan override
+     public function getName(){
+        //mengembalikan nilai
+        return "Mahasiswa ini bernama  $this->name";
+    }
+}
+
+?>
+```
+o Tambahkan metode setter dan getter untuk mengakses dan mengubah nilai atribut name dan studentID.<br>
+##### codingan menambahkan getter setter
+```php
+<?php
+//perintah untuk membuat method getter untuk menggakse atribut
+    public function getStudentID(){
+        //mengembalikan nilai
+        return $this->studentID;
+    }
+
+    //perintah untuk mengubah atau mengatur nilai pada atribut
+    public function setStudentID($studentID_baru){
+    $this->studentID = $studentID_baru;
+    return "ID nya diganti $this->studentID";
+    }
+    
+
+     //perintah untuk membuat method getName untuk tujuan override
+     public function getName(){
+        //mengembalikan nilai
+        return "Mahasiswa ini bernama  $this->name";
+    }
+
+    //perintah untuk mengubah atau mengatur nilai pada atribut
+    public function setName($name_baru){
+        $this->name = $name_baru;
+        return "Namanya diganti $this->name";
+    }
+?>
+```
+##### instansiasi dan tampil data
+```php
+<?php
+//perintah untuk instansiasi objek baru dari class student
+$student1 = new Student("Windy", "12334566");
+//perintah untuk menampilkan nama dan ID menggunakan metode yang sudah sesuai dan yang sudag tadi dibuat
+echo $student1->getName(). " Mempunyai ID " . $student1->getStudentID();
+echo "<br>";
+
+//perintah memanggilkan method setter name untuk mengganti nilai pada atribut name
+echo $student1->setName("Putri");
+echo "<br>";
+
+//perintah memanggilkan method setter studentID untuk mengganti nilai pada atribut studentsID
+echo $student1->setStudentID("111111111");
+echo "<br>";
+
+//perintah untuk menampilkan nama dan id setelah diubah
+echo $student1->getName(). " Mempunyai ID " . $student1->getStudentID();
+echo "<br>";
+?>
+```
+
+##### codingan seluruhnya setelah selesai melakukan encapsulation
+```php
+<?php
+//perintah untuk membuka perintah php
+//perintah untuk membuat class bernama person
+class Person {
+    //perintah untuk membuat atribut dengan hak akses protected
+    protected $name;
+
+    //perintah membuat method construct untuk menginisialisasi atribut saat instansiasi objek
+    public function __construct($name){
+        $this->name = $name;
+    }
+
+     //perintah untuk membuat method getter yang dimana berfungsi untuk mengakses atribut yang bersifat protected
+    public function getName(){
+        //mengembalikan nilai
+        return $this->name;
+    }
+}
+
+//perintah untuk membuat class turunan student dari person
+class Student extends Person{
+    //perintah untuk menambahkan atribut studentID
+    private $studentID;
+
+    //perintah membuat method construct untuk menginisialisasi atribut saat instansiasi objek
+    public function __construct($name, $studentID){
+        //perintah untuk memanggil constructor yang ada di class induk
+        parent::__construct($name);
+        //inisialisasi atribut
+        $this->studentID = $studentID;
+    }
+
+    //perintah untuk membuat method getter untuk menggakse atribut
+    public function getStudentID(){
+        //mengembalikan nilai
+        return $this->studentID;
+    }
+
+    //perintah untuk mengubah atau mengatur nilai pada atribut
+    public function setStudentID($studentID_baru){
+    $this->studentID = $studentID_baru;
+    return "ID nya diganti $this->studentID";
+    }
+    
+
+     //perintah untuk membuat method getName untuk tujuan override
+     public function getName(){
+        //mengembalikan nilai
+        return "Mahasiswa ini bernama  $this->name";
+    }
+
+    //perintah untuk mengubah atau mengatur nilai pada atribut
+    public function setName($name_baru){
+        $this->name = $name_baru;
+        return "Namanya diganti $this->name";
+    }
+}
+
+//perintah untuk instansiasi objek baru dari class student
+$student1 = new Student("Windy", "12334566");
+//perintah untuk menampilkan nama dan ID menggunakan metode yang sudah sesuai dan yang sudag tadi dibuat
+echo $student1->getName(). " Mempunyai ID " . $student1->getStudentID();
+echo "<br>";
+
+//perintah memanggilkan method setter name untuk mengganti nilai pada atribut name
+echo $student1->setName("Putri");
+echo "<br>";
+
+//perintah memanggilkan method setter studentID untuk mengganti nilai pada atribut studentsID
+echo $student1->setStudentID("111111111");
+echo "<br>";
+
+//perintah untuk menampilkan nama dan id setelah diubah
+echo $student1->getName(). " Mempunyai ID " . $student1->getStudentID();
+echo "<br>";
+?>
+```
+##### Hasil Output
+![26](https://github.com/user-attachments/assets/caa794f7-b1af-4f5b-9f89-671ef79c7c77)
+
+4. Abstraction<br>
+o Buat kelas abstrak Course dengan metode abstrak getCourseDetails().<br>
+##### codingan class abstract course
+```php
+<?php
+//perintah untuk membuka perintah php
+//perintah untuk membuka atau mendefinisikan class abstract course
+abstract class Course {
+    //perintah membuat method absctract yang harus diimplementasikan oleh semua class turunan
+    abstract public function getCourseDetails();
+}
+?>
+```
+o Buat kelas OnlineCourse dan OfflineCourse yang mengimplementasikan
+getCourseDetails() untuk memberikan detail yang berbeda.<br>
+##### codingan penerapan getcoursedetails()
+###### a. class onlinecourse
+```php
+<?php
+//perintah membuat class onlinecourse yang merupakan class turunan dari course
+class OnlineCourse extends Course{
+    //perintah untuk mengimplemntasikan getcoutrsedetails() dengan cara yang berbeda
+    public function getCourseDetails(){
+        //mengembalikan nilai
+        return "Course ini dilaksanakan secara Online";
+    }
+}
+?>
+```
+###### b. class offlinecourse
+```php
+<?php
+//perintah membuat class offlinecourse yang merupakan class turunan dari course
+class OfflineCourse extends Course{
+    //perintah untuk mengimplemntasikan getcoutrsedetails() dengan cara yang berbeda
+    public function getCourseDetails(){
+        //mengembalikan nilai
+        return "Course ini dilaksanakan secara Offline";
+    }
+}
+?>
+```
+###### c. instansiasi objek
+```php
+<?php
+//instasiasi objek dari class onlinecourse 
+$tampil1 = new OnlineCourse();
+
+//memaggil dan menampilkan method getcoursedetails()
+echo "OnlineCourse : " . $tampil1->getCourseDetails();
+echo "<br>";
+
+//instasiasi objek dari class onfflinecourse 
+$tampil2 = new OfflineCourse();
+//memaggil dan menampilkan method getcoursedetails()
+echo "OfflineCourse : " . $tampil2->getCourseDetails();
+?>
+```
+
+###### d. codingan secara keseluruhan
+```php
+<?php
+//perintah untuk membuka perintah php
+//perintah untuk membuka atau mendefinisikan class abstract course
+abstract class Course {
+    //perintah membuat method absctract yang harus diimplementasikan oleh semua class turunan
+    abstract public function getCourseDetails();
+}
+
+//perintah membuat class onlinecourse yang merupakan class turunan dari course
+class OnlineCourse extends Course{
+    //perintah untuk mengimplemntasikan getcoutrsedetails() dengan cara yang berbeda
+    public function getCourseDetails(){
+        //mengembalikan nilai
+        return "Course ini dilaksanakan secara Online";
+    }
+}
+
+//perintah membuat class offlinecourse yang merupakan class turunan dari course
+class OfflineCourse extends Course{
+    //perintah untuk mengimplemntasikan getcoutrsedetails() dengan cara yang berbeda
+    public function getCourseDetails(){
+        //mengembalikan nilai
+        return "Course ini dilaksanakan secara Offline";
+    }
+}
+
+//instasiasi objek dari class onlinecourse 
+$tampil1 = new OnlineCourse();
+
+//memaggil dan menampilkan method getcoursedetails()
+echo "OnlineCourse : " . $tampil1->getCourseDetails();
+echo "<br>";
+
+//instasiasi objek dari class onfflinecourse 
+$tampil2 = new OfflineCourse();
+//memaggil dan menampilkan method getcoursedetails()
+echo "OfflineCourse : " . $tampil2->getCourseDetails();
+?>
+```
+
+###### Hasil Output
+![27](https://github.com/user-attachments/assets/72f5a945-6e51-4b22-81a0-1c239ff457d8)
+
+### TUGAS JOBSHEET3
+1. Implementasikan kelas Person sebagai induk dari Dosen dan Mahasiswa.<br>
+##### codingan class person
+```php
+<?php
+//perintah untuk membuka perintah php
+//perintah untuk membuat class
+class Person {
+    //perointah untuk membuat atribut name dengan hak akses protected
+    protected $name;
+
+    //perintah untuk membuat method construct untuk menginisialisasi atribut
+    public function __construct($name){
+        //inisialisasi atribut
+        $this->name = $name;
+    }
+
+    //perintah membuat method getter untuk mengakses atribut dengan hak akses protected
+    public function getName(){
+        //mengembalikan nilai
+        return $this->name;
+    }
+}
+?>
+```
+2. Gunakan konsep Inheritance untuk membuat hierarki kelas yang memungkinkan
+Dosen dan Mahasiswa memiliki atribut dan metode yang sesuai dengan perannya.<br>
+##### inheritance
+###### a. class dosen 
+```php
+<?php
+//perintah untuk membbuat class dosen dengan menjadi turunan dari class person
+class Dosen extends Person{
+    //membuat atribut dengan hak akses public
+    public $nidn;
+
+    //perintah untuk membuat method construc untuk menginisialisaisi atribut
+    public function __construct($name, $nidn){
+        //perintah untuk memanggil method construct yang ada di class induk (class person)
+        parent::__construct($name);
+        //perintah untuk inisialisasi atribut
+        $this->nidn = $nidn;
+    }
+}
+?>
+```
+###### b. class mahasiswa
+```php
+<?php
+//perintah untuk membbuat class mahasiswa dengan menjadi turunan dari class person
+class Mahasiswa extends Person{
+    //membuat atribut dengan hak akses public
+    public $nim;
+
+    
+    //perintah untuk membuat method construc untuk menginisialisaisi atribut
+    public function __construct($name, $nim){
+        //perintah untuk memanggil method construct yang ada di class induk (class person)
+        parent::__construct($name);
+        //perintah untuk inisialisasi atribut
+        $this->nim = $nim;
+    }
+}
+?>
+```
+###### c. codingan keseluruhan setelah menngunakan inheritance
+```php
+<?php
+//perintah untuk membuka perintah php
+//perintah untuk membuat class
+class Person {
+    //perointah untuk membuat atribut name dengan hak akses protected
+    protected $name;
+
+    //perintah untuk membuat method construct untuk menginisialisasi atribut
+    public function __construct($name){
+        //inisialisasi atribut
+        $this->name = $name;
+    }
+
+    //perintah membuat method getter untuk mengakses atribut dengan hak akses protected
+    public function getName(){
+        //mengembalikan nilai
+        return $this->name;
+    }
+}
+
+//perintah untuk membbuat class dosen dengan menjadi turunan dari class person
+class Dosen extends Person{
+    //membuat atribut dengan hak akses public
+    public $nidn;
+
+    //perintah untuk membuat method construc untuk menginisialisaisi atribut
+    public function __construct($name, $nidn){
+        //perintah untuk memanggil method construct yang ada di class induk (class person)
+        parent::__construct($name);
+        //perintah untuk inisialisasi atribut
+        $this->nidn = $nidn;
+    }
+}
+//perintah untuk membbuat class mahasiswa dengan menjadi turunan dari class person
+class Mahasiswa extends Person{
+    //membuat atribut dengan hak akses public
+    public $nim;
+
+    
+    //perintah untuk membuat method construc untuk menginisialisaisi atribut
+    public function __construct($name, $nim){
+        //perintah untuk memanggil method construct yang ada di class induk (class person)
+        parent::__construct($name);
+        //perintah untuk inisialisasi atribut
+        $this->nim = $nim;
+    }
+}
+?>
+```
+3. Terapkan Polymorphism dengan membuat metode getRole() di kelas Person dan
+override metode ini di kelas Dosen dan Mahasiswa untuk menampilkan peran yang
+berbeda.<br>
+##### menerapkan polymorphism
+###### a. class person
+```php
+<?php
+//perintah membuat metode getRole()
+    public function getRole(){
+        //mengembalikan nilai
+        return "Role ini ";
+    }
+?>
+```
+###### b. class dosen
+```php
+<?php
+  //perintah untuk mengimplementasikan getRole() dengan cara yang berbeda
+    public function getRole(){
+        return "Role ini adalah Dosen, yang bernama $this->name memiliki nidn $this->nidn";
+    }
+?>
+```
+###### c. class mahasiswa
+```php
+<?php
+ //perintah untuk mengimplementasikan getRole() dengan cara yang berbeda
+    public function getRole(){
+        return "Role ini adalah Mahasiswa, yang bernama $this->name memilik nim $this->nim";
+    }
+?>
+```
+##### Coding keseluruhan setelah menerapkan Polymorphism
+```php
+<?php
+//perintah untuk membuka perintah php
+//perintah untuk membuat class
+class Person {
+    //perointah untuk membuat atribut name dengan hak akses protected
+    protected $name;
+
+    //perintah untuk membuat method construct untuk menginisialisasi atribut
+    public function __construct($name){
+        //inisialisasi atribut
+        $this->name = $name;
+    }
+
+    //perintah membuat method getter untuk mengakses atribut dengan hak akses protected
+    public function getName(){
+        //mengembalikan nilai
+        return $this->name;
+    }
+
+    //perintah membuat metode getRole()
+    public function getRole(){
+        //mengembalikan nilai
+        return "Role ini ";
+    }
+}
+
+//perintah untuk membbuat class dosen dengan menjadi turunan dari class person
+class Dosen extends Person{
+    //membuat atribut dengan hak akses public
+    public $nidn;
+
+    //perintah untuk membuat method construc untuk menginisialisaisi atribut
+    public function __construct($name, $nidn){
+        //perintah untuk memanggil method construct yang ada di class induk (class person)
+        parent::__construct($name);
+        //perintah untuk inisialisasi atribut
+        $this->nidn = $nidn;
+    }
+
+    //perintah untuk mengimplementasikan getRole() dengan cara yang berbeda
+    public function getRole(){
+        return "Role ini adalah Dosen, yang bernama $this->name memiliki nidn $this->nidn";
+    }
+}
+//perintah untuk membbuat class mahasiswa dengan menjadi turunan dari class person
+class Mahasiswa extends Person{
+    //membuat atribut dengan hak akses public
+    public $nim;
+
+    
+    //perintah untuk membuat method construc untuk menginisialisaisi atribut
+    public function __construct($name, $nim){
+        //perintah untuk memanggil method construct yang ada di class induk (class person)
+        parent::__construct($name);
+        //perintah untuk inisialisasi atribut
+        $this->nim = $nim;
+    }
+
+    //perintah untuk mengimplementasikan getRole() dengan cara yang berbeda
+    public function getRole(){
+        return "Role ini adalah Mahasiswa, yang bernama $this->name memilik nim $this->nim";
+    }
+}
+?>
+```
+
+4. Gunakan Encapsulation untuk melindungi atribut nidn di kelas Dosen dan nim di
+kelas Mahasiswa.<br>
+##### encapsulation
+###### a. class dosen
+langkah yang pertama, yaitu ubah hak akses atribut nidn menjadi private
+langkah kedua, yaitu buat methode getter
+```php
+<?php
+//perintah untuk membbuat class dosen dengan menjadi turunan dari class person
+class Dosen extends Person{
+    //membuat atribut dengan hak akses public
+    private $nidn;
+
+    //perintah untuk membuat method construc untuk menginisialisaisi atribut
+    public function __construct($name, $nidn){
+        //perintah untuk memanggil method construct yang ada di class induk (class person)
+        parent::__construct($name);
+        //perintah untuk inisialisasi atribut
+        $this->nidn = $nidn;
+    }
+
+    //perintah untuk mengimplementasikan getRole() dengan cara yang berbeda
+    public function getRole(){
+        return "Role ini adalah Dosen, yang bernama $this->name memiliki nidn $this->nidn";
+    }
+
+    //perintah untuk membuat method getter untuk mengakses atribut private
+    public function getNidn(){
+        //mengembalikan nilai
+        return $this->nidn;
+    }
+}
+?>
+```
+
+###### b. class mahasiswa
+langkah yang pertama, yaitu ubah hak akses atribut nim menjadi private
+langkah kedua, yaitu buat methode getter
+```php
+<?php
+//perintah untuk membbuat class mahasiswa dengan menjadi turunan dari class person
+class Mahasiswa extends Person{
+    //membuat atribut dengan hak akses public
+    public $nim;
+
+    
+    //perintah untuk membuat method construc untuk menginisialisaisi atribut
+    public function __construct($name, $nim){
+        //perintah untuk memanggil method construct yang ada di class induk (class person)
+        parent::__construct($name);
+        //perintah untuk inisialisasi atribut
+        $this->nim = $nim;
+    }
+
+    //perintah untuk mengimplementasikan getRole() dengan cara yang berbeda
+    public function getRole(){
+        return "Role ini adalah Mahasiswa, yang bernama $this->name memilik nim $this->nim";
+    }
+
+     //perintah untuk membuat method getter untuk mengakses atribut private
+    public function getNim(){
+        //mengembalikan nilai
+        return $this->nim;
+    }
+}
+?>
+```
+##### instansiasi objek
+###### 1. class dosen
+```php
+<?php
+//perintah untuk membuat objek dari class dosen
+$dosen1 = new Dosen("Windy", "123456");
+//perintah untuk memanggil method getter name 
+echo "Dosen ini bernama " . $dosen1->getName();
+echo "<br>";
+//perintah untuk memanggil method getter nidn
+echo "Dosen ini memiliki Nidn " . $dosen1->getNidn();
+echo "<br>";
+//perintah untuk memanggil method getter role
+echo $dosen1->getRole();
+echo "<br><hr>";
+?>
+```
+hasil output di atas mencangkup:
+- nama : inheritance
+- nidn : encapsulation
+- role : polymorphism
+###### 2. class mahasiswa
+```php
+<?php
+//perintah untuk membuat objek dari class mahasiswa
+$mahasiswa1 = new Mahasiswa("Amanda", "200920");
+//perintah untuk memanggil method getter name 
+echo "Mahasiswa ini bernama " . $mahasiswa1->getName();
+echo "<br>";
+//perintah untuk memanggil method getter nim
+echo "Mahasiswa ini memiliki Nim " . $mahasiswa1->getNim();
+echo "<br>";
+//perintah untuk memanggil method getter role
+echo $mahasiswa1->getRole();
+echo "<br><hr><hr>";
+?>
+```
+hasil output di atas mencangkup:
+- nama : inheritance
+- nim : encapsulation
+- role : polymorphism
+
+##### coding seluruh setelah melakukan inheritance, polymorphis dan encapsulation
+```php
+<?php
+//perintah untuk membuka perintah php
+//perintah untuk membuat class
+class Person {
+    //perointah untuk membuat atribut name dengan hak akses protected
+    protected $name;
+
+    //perintah untuk membuat method construct untuk menginisialisasi atribut
+    public function __construct($name){
+        //inisialisasi atribut
+        $this->name = $name;
+    }
+
+    //perintah membuat method getter untuk mengakses atribut dengan hak akses protected
+    public function getName(){
+        //mengembalikan nilai
+        return $this->name;
+    }
+
+    //perintah membuat metode getRole()
+    public function getRole(){
+        //mengembalikan nilai
+        return "Role ini ";
+    }
+}
+
+//perintah untuk membbuat class dosen dengan menjadi turunan dari class person
+class Dosen extends Person{
+    //membuat atribut dengan hak akses public
+    private $nidn;
+
+    //perintah untuk membuat method construc untuk menginisialisaisi atribut
+    public function __construct($name, $nidn){
+        //perintah untuk memanggil method construct yang ada di class induk (class person)
+        parent::__construct($name);
+        //perintah untuk inisialisasi atribut
+        $this->nidn = $nidn;
+    }
+
+    //perintah untuk mengimplementasikan getRole() dengan cara yang berbeda
+    public function getRole(){
+        return "Role ini adalah Dosen, yang bernama $this->name memiliki nidn $this->nidn";
+    }
+
+    //perintah untuk membuat method getter untuk mengakses atribut private
+    public function getNidn(){
+        //mengembalikan nilai
+        return $this->nidn;
+    }
+}
+//perintah untuk membbuat class mahasiswa dengan menjadi turunan dari class person
+class Mahasiswa extends Person{
+    //membuat atribut dengan hak akses public
+    public $nim;
+
+    
+    //perintah untuk membuat method construc untuk menginisialisaisi atribut
+    public function __construct($name, $nim){
+        //perintah untuk memanggil method construct yang ada di class induk (class person)
+        parent::__construct($name);
+        //perintah untuk inisialisasi atribut
+        $this->nim = $nim;
+    }
+
+    //perintah untuk mengimplementasikan getRole() dengan cara yang berbeda
+    public function getRole(){
+        return "Role ini adalah Mahasiswa, yang bernama $this->name memilik nim $this->nim";
+    }
+
+     //perintah untuk membuat method getter untuk mengakses atribut private
+    public function getNim(){
+        //mengembalikan nilai
+        return $this->nim;
+    }
+}
+//perintah untuk membuat objek dari class dosen
+$dosen1 = new Dosen("Windy", "123456");
+//perintah untuk memanggil method getter name 
+echo "Dosen ini bernama " . $dosen1->getName();
+echo "<br>";
+//perintah untuk memanggil method getter nidn
+echo "Dosen ini memiliki Nidn " . $dosen1->getNidn();
+echo "<br>";
+//perintah untuk memanggil method getter role
+echo $dosen1->getRole();
+echo "<br><hr>";
+
+//perintah untuk membuat objek dari class mahasiswa
+$mahasiswa1 = new Mahasiswa("Amanda", "200920");
+//perintah untuk memanggil method getter name 
+echo "Mahasiswa ini bernama " . $mahasiswa1->getName();
+echo "<br>";
+//perintah untuk memanggil method getter nim
+echo "Mahasiswa ini memiliki Nim " . $mahasiswa1->getNim();
+echo "<br>";
+//perintah untuk memanggil method getter role
+echo $mahasiswa1->getRole();
+echo "<br><hr><hr>";
+?>
+```
+
+##### Hasil Output
+![28](https://github.com/user-attachments/assets/3b9ce721-a5bf-4189-885a-ed165ca99bcd)
 
 
+5. Buat kelas abstrak Jurnal dan implementasikan konsep Abstraction dengan
+membuat kelas turunan JurnalDosen dan JurnalMahasiswa yang masing-masing
+memiliki cara tersendiri untuk mengelola pengajuan jurnal.<br>
+##### codingan membuat class abstract jurnal, class jurnaldosen extend jurnal, class jurnal mahasiswa extends jurnal dan instansiasi
+```php
+<?php
+//perintah untuk membuka atau mendefinisikan class abstract jurnal
+abstract class Jurnal {
+    //perintah membuat method absctract yang harus diimplementasikan oleh semua class turunan
+    abstract public function pengajuanJurnal();
+}
+
+//perintah membuat class jurnaldosen yang merupakan class turunan dari jurnal
+class JurnalDosen extends Jurnal{
+    //perintah untuk mengimplemntasikan pengajuanjurnal() dengan cara yang berbeda
+    public function pengajuanJurnal(){
+        return "Pengajuan Jurnal ini dilakukan oleh Dosen";
+    }
+}
+
+//perintah membuat class jurnalmahasiswa yang merupakan class turunan dari jurnal
+class JurnalMahasiswa extends Jurnal{
+    //perintah untuk mengimplemntasikan pengajuanjurnal() dengan cara yang berbeda
+    public function pengajuanJurnal(){
+        return "Pengajuan Jurnal ini dilakukan oleh Mahasiswa";
+    }
+}
+
+//instasiasi objek dari class jurnaldosen 
+$jurnal1 = new JurnalDosen();
+//memanggil dan menampilkan method pengajuanjurnal()
+echo "Jurnal Dosen :".$jurnal1->pengajuanJurnal();
+echo "<br>";
+
+//instasiasi objek dari class jurnaldosen 
+$jurnal2 = new JurnalMahasiswa();
+//memanggil dan menampilkan method pengajuanjurnal()
+echo "Jurnal Mahasiswa :" .$jurnal2->pengajuanJurnal();
+echo "<br>";
+?>
+```
+##### Hasil Output
+![29](https://github.com/user-attachments/assets/192ab26e-de8e-45a8-8733-ebeee811515e)
+
+##### codingan seluruh tugas dari jobsheet3
+```php
+<?php
+//perintah untuk membuka perintah php
+//perintah untuk membuat class
+class Person {
+    //perointah untuk membuat atribut name dengan hak akses protected
+    protected $name;
+
+    //perintah untuk membuat method construct untuk menginisialisasi atribut
+    public function __construct($name){
+        //inisialisasi atribut
+        $this->name = $name;
+    }
+
+    //perintah membuat method getter untuk mengakses atribut dengan hak akses protected
+    public function getName(){
+        //mengembalikan nilai
+        return $this->name;
+    }
+
+    //perintah membuat metode getRole()
+    public function getRole(){
+        //mengembalikan nilai
+        return "Role ini ";
+    }
+}
+
+//perintah untuk membbuat class dosen dengan menjadi turunan dari class person
+class Dosen extends Person{
+    //membuat atribut dengan hak akses public
+    private $nidn;
+
+    //perintah untuk membuat method construc untuk menginisialisaisi atribut
+    public function __construct($name, $nidn){
+        //perintah untuk memanggil method construct yang ada di class induk (class person)
+        parent::__construct($name);
+        //perintah untuk inisialisasi atribut
+        $this->nidn = $nidn;
+    }
+
+    //perintah untuk mengimplementasikan getRole() dengan cara yang berbeda
+    public function getRole(){
+        return "Role ini adalah Dosen, yang bernama $this->name memiliki nidn $this->nidn";
+    }
+
+    //perintah untuk membuat method getter untuk mengakses atribut private
+    public function getNidn(){
+        //mengembalikan nilai
+        return $this->nidn;
+    }
+}
+//perintah untuk membbuat class mahasiswa dengan menjadi turunan dari class person
+class Mahasiswa extends Person{
+    //membuat atribut dengan hak akses public
+    public $nim;
+
+    
+    //perintah untuk membuat method construc untuk menginisialisaisi atribut
+    public function __construct($name, $nim){
+        //perintah untuk memanggil method construct yang ada di class induk (class person)
+        parent::__construct($name);
+        //perintah untuk inisialisasi atribut
+        $this->nim = $nim;
+    }
+
+    //perintah untuk mengimplementasikan getRole() dengan cara yang berbeda
+    public function getRole(){
+        return "Role ini adalah Mahasiswa, yang bernama $this->name memilik nim $this->nim";
+    }
+
+     //perintah untuk membuat method getter untuk mengakses atribut private
+    public function getNim(){
+        //mengembalikan nilai
+        return $this->nim;
+    }
+}
+//perintah untuk membuat objek dari class dosen
+$dosen1 = new Dosen("Windy", "123456");
+//perintah untuk memanggil method getter name 
+echo "Dosen ini bernama " . $dosen1->getName();
+echo "<br>";
+//perintah untuk memanggil method getter nidn
+echo "Dosen ini memiliki Nidn " . $dosen1->getNidn();
+echo "<br>";
+//perintah untuk memanggil method getter role
+echo $dosen1->getRole();
+echo "<br><hr>";
+
+//perintah untuk membuat objek dari class mahasiswa
+$mahasiswa1 = new Mahasiswa("Amanda", "200920");
+//perintah untuk memanggil method getter name 
+echo "Mahasiswa ini bernama " . $mahasiswa1->getName();
+echo "<br>";
+//perintah untuk memanggil method getter nim
+echo "Mahasiswa ini memiliki Nim " . $mahasiswa1->getNim();
+echo "<br>";
+//perintah untuk memanggil method getter role
+echo $mahasiswa1->getRole();
+echo "<br><hr><hr>";
+
+//perintah untuk membuka atau mendefinisikan class abstract jurnal
+abstract class Jurnal {
+    //perintah membuat method absctract yang harus diimplementasikan oleh semua class turunan
+    abstract public function pengajuanJurnal();
+}
+
+//perintah membuat class jurnaldosen yang merupakan class turunan dari jurnal
+class JurnalDosen extends Jurnal{
+    //perintah untuk mengimplemntasikan pengajuanjurnal() dengan cara yang berbeda
+    public function pengajuanJurnal(){
+        return "Pengajuan Jurnal ini dilakukan oleh Dosen";
+    }
+}
+
+//perintah membuat class jurnalmahasiswa yang merupakan class turunan dari jurnal
+class JurnalMahasiswa extends Jurnal{
+    //perintah untuk mengimplemntasikan pengajuanjurnal() dengan cara yang berbeda
+    public function pengajuanJurnal(){
+        return "Pengajuan Jurnal ini dilakukan oleh Mahasiswa";
+    }
+}
+
+//instasiasi objek dari class jurnaldosen 
+$jurnal1 = new JurnalDosen();
+//memanggil dan menampilkan method pengajuanjurnal()
+echo "Jurnal Dosen :".$jurnal1->pengajuanJurnal();
+echo "<br>";
+
+//instasiasi objek dari class jurnaldosen 
+$jurnal2 = new JurnalMahasiswa();
+//memanggil dan menampilkan method pengajuanjurnal()
+echo "Jurnal Mahasiswa :" .$jurnal2->pengajuanJurnal();
+echo "<br>";
+?>
+```
+##### Hasil Output
+![30](https://github.com/user-attachments/assets/a6cbfa89-14aa-4fe4-b1fd-5969936b3c6e)
