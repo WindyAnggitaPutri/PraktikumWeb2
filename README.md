@@ -1009,10 +1009,6 @@ echo "<br><hr>";
 
 5. Polymorphism<br>
 o Buat class Pengguna dengan metode aksesFitur().<br>
-o Implementasikan aksesFitur() dengan cara berbeda di class Dosen dan
-Mahasiswa.<br>
-o Instansiasi objek dari class Dosen dan Mahasiswa, lalu panggil metode
-aksesFitur().<br>
 ##### Codingan membuat class pengguna dengan metode akses Fitur()
 ```php
 <?php
@@ -1041,7 +1037,8 @@ aksesFitur().<br>
 }
 ?>
 ```
-
+o Implementasikan aksesFitur() dengan cara berbeda di class Dosen dan
+Mahasiswa.<br>
 ##### Codingan untuk mengimplementasikan aksesFitur() di class Dosen dan Mahasiswa dengan cara yang berbeda
 ###### a. implementasi aksesFitur() di class Dosen 
 ```php
@@ -1089,13 +1086,417 @@ class Dosen extends Pengguna {
 }
 ?>
 ```
-###### c. memodifikasi class mahasiswa sebelumnya agar mewarisi class pengguna
+###### c. memodifikasi class mahasiswa yang sudah dibuat sebelumnya agar mewarisi class pengguna
+```php
+<?php
+//perintah untuk membuat atau mendefinisikan class mahasiswa untuk mewarisi dari class pengguna
+class Mahasiswa extends pengguna{
+    //perintah untuk membuat atribut, dan memberikan hak akses kepada masing masing atribut, hak akses yang digunakan disini yaitu private
+    private $nim;
+    private $jurusan;
 
+    //membuat method construct untuk menginisialisasi atribut
+    public function __construct($nama, $nim, $jurusan){
+        //perintah untuk memanggil constructor parent untuk menginisialisasi atribut nama
+        parent::__construct($nama);
+        //menginisialisasi  nilai atribut nip, mataKuliah
+        $this->nim = $nim;
+        $this->jurusan = $jurusan;
+    
+    }
+
+    //perintah untuk membuat method untuk menampilkan data mahasiswa
+    public function tampilkanData() {
+        //mengembalikan niali berupa string ketika method ini dipanggil
+        return "Mahasiswa ini bernama $this->nama dengan nim $this->nim dari jurusan $this->jurusan.";
+    }
+
+    /*membuat metode getter pada atribut name, karena atribut name bersifat private, 
+    dan fungsi metode get digunakan untuk mengakses nilai dari atribut yang bersifat private 
+    yang tidak bisa diakses oleh luar class, metode get juga dapat digunakan untuk mengambil nilai.*/
+    public function getNama(){
+        return $this->nama;
+    }
+
+    /*Membuat method setter untuk mengubah nilai yang ada pada atribut private
+    methode ini digunakan untuk mangatur nilai dari atribut private yang tidak bisa diakses 
+    secara langsung dari luar kelas*/ 
+    public function setNama($nama_baru) {
+        $this->nama = $nama_baru;
+        return "nama telah diganti menjadi $this->nama.";
+    }
+
+    /*membuat metode getter pada atribut nim, karena atribut nim bersifat private, 
+    dan fungsi metode get digunakan untuk mengakses nilai dari atribut yang bersifat private 
+    yang tidak bisa diakses oleh luar class, metode get juga dapat digunakan untuk mengambil nilai.*/
+    public function getNim(){
+        return $this->nim;
+    }
+     
+    /*Membuat method setter untuk mengubah nilai yang ada pada atribut private
+    methode ini digunakan untuk mangatur nilai dari atribut private yang tidak bisa diakses 
+    secara langsung dari luar kelas*/ 
+    public function setNim($nim_baru){
+        $this->nim = $nim_baru;
+        return "nim telah diganti menjadi $this->nim.";
+    }
+
+    
+    /*membuat metode getter pada atribut jurusan, karena atribut jurusan bersifat private, 
+    dan fungsi metode get digunakan untuk mengakses nilai dari atribut yang bersifat private 
+    yang tidak bisa diakses oleh luar class, metode get juga dapat digunakan untuk mengambil nilai.*/
+    public function getJurusan(){
+        return $this->jurusan;
+    }
+
+    /*Membuat method setter untuk mengubah nilai yang ada pada atribut private
+    methode ini digunakan untuk mangatur nilai dari atribut private yang tidak bisa diakses 
+    secara langsung dari luar kelas*/
+    public function setJurusan($jurusan_baru){
+        $this->jurusan = $jurusan_baru;
+        return "jurusan telah diganti menjadi $this->jurusan.";
+    }
+}
+?>
+```
+###### d. menambahkan method aksesFitur() pada class mahasiswa yang telah di extends dari pengguna
+```php
+<?php
+//perintah untuk membuat aksesFitur()
+    public function aksesFitur(){
+        //mengembalikan nilai
+        return "Mahasiswa ini bernama $this->nama dengan nim $this->nim dari jurusan $this->jurusan dapat mengakses jadwal perkuliahan";
+    }
+}
+?>
+```
+###### e. codingan ini berisi seluruh class mahasiswa setelah menambahkan askesFitur()
+```php
+<?php
+//perintah untuk membuka perintah atau dokumen php
+//perintah untuk membuat atau mendefinisikan class mahasiswa untuk mewarisi dari class pengguna
+class Mahasiswa extends pengguna{
+    //perintah untuk membuat atribut, dan memberikan hak akses kepada masing masing atribut, hak akses yang digunakan disini yaitu private
+    private $nim;
+    private $jurusan;
+
+    //membuat method construct untuk menginisialisasi atribut
+    public function __construct($nama, $nim, $jurusan){
+        //perintah untuk memanggil constructor parent untuk menginisialisasi atribut nama
+        parent::__construct($nama);
+        //menginisialisasi  nilai atribut nip, mataKuliah
+        $this->nim = $nim;
+        $this->jurusan = $jurusan;
+    
+    }
+
+    //perintah untuk membuat method untuk menampilkan data mahasiswa
+    public function tampilkanData() {
+        //mengembalikan niali berupa string ketika method ini dipanggil
+        return "Mahasiswa ini bernama $this->nama dengan nim $this->nim dari jurusan $this->jurusan.";
+    }
+
+    /*membuat metode getter pada atribut name, karena atribut name bersifat private, 
+    dan fungsi metode get digunakan untuk mengakses nilai dari atribut yang bersifat private 
+    yang tidak bisa diakses oleh luar class, metode get juga dapat digunakan untuk mengambil nilai.*/
+    public function getNama(){
+        return $this->nama;
+    }
+
+    /*Membuat method setter untuk mengubah nilai yang ada pada atribut private
+    methode ini digunakan untuk mangatur nilai dari atribut private yang tidak bisa diakses 
+    secara langsung dari luar kelas*/ 
+    public function setNama($nama_baru) {
+        $this->nama = $nama_baru;
+        return "nama telah diganti menjadi $this->nama.";
+    }
+
+    /*membuat metode getter pada atribut nim, karena atribut nim bersifat private, 
+    dan fungsi metode get digunakan untuk mengakses nilai dari atribut yang bersifat private 
+    yang tidak bisa diakses oleh luar class, metode get juga dapat digunakan untuk mengambil nilai.*/
+    public function getNim(){
+        return $this->nim;
+    }
+     
+    /*Membuat method setter untuk mengubah nilai yang ada pada atribut private
+    methode ini digunakan untuk mangatur nilai dari atribut private yang tidak bisa diakses 
+    secara langsung dari luar kelas*/ 
+    public function setNim($nim_baru){
+        $this->nim = $nim_baru;
+        return "nim telah diganti menjadi $this->nim.";
+    }
+
+    
+    /*membuat metode getter pada atribut jurusan, karena atribut jurusan bersifat private, 
+    dan fungsi metode get digunakan untuk mengakses nilai dari atribut yang bersifat private 
+    yang tidak bisa diakses oleh luar class, metode get juga dapat digunakan untuk mengambil nilai.*/
+    public function getJurusan(){
+        return $this->jurusan;
+    }
+
+    /*Membuat method setter untuk mengubah nilai yang ada pada atribut private
+    methode ini digunakan untuk mangatur nilai dari atribut private yang tidak bisa diakses 
+    secara langsung dari luar kelas*/
+    public function setJurusan($jurusan_baru){
+        $this->jurusan = $jurusan_baru;
+        return "jurusan telah diganti menjadi $this->jurusan.";
+    }
+
+    //perintah untuk membuat aksesFitur()
+    public function aksesFitur(){
+        //mengembalikan nilai
+        return "Mahasiswa ini bernama $this->nama dengan nim $this->nim dari jurusan $this->jurusan dapat mengakses jadwal perkuliahan";
+    }
+}
+?>
+```
+##### Hasil Output belum ada karena belum di instansiasi dan belum menampilkan data
+
+o Instansiasi objek dari class Dosen dan Mahasiswa, lalu panggil metode
+aksesFitur().<br>
+##### Instansiasi obejek dan memanggil aksesFitur()
+```php
+<?php
+//perintah untuk instansiasi objek dari class mahasiswa
+$mahasiswa2 = new Mahasiswa("Olivia", "12354643", "Bahasa");
+//perintah untuk memanggil dan mengakses method akesFitur()
+echo $mahasiswa2->aksesFitur();
+echo "<br>";
+
+//perintah untuk instansiasi objek dari class dosen
+$dosen2 = new Dosen("Sabrina", "Musik");
+//perintah untuk memanggil dan mengakses method akesFitur()
+echo $dosen2->aksesFitur();
+
+?>
+```
+##### Hasil Output 
+![21](https://github.com/user-attachments/assets/e77d45c9-f16e-43e4-bd00-146981fe1ba3)
+Hasil Output di atas menampilkan setelah melakukan polymorphism bahwa berhasil melakukan implementasi method aksesFitur() dengan cara yang berbeda
 
 7. Abstraction<br>
+o Buat class abstrak Pengguna dengan metode abstrak aksesFitur().<br>
+```php
+<?php
+//perintah untuk melakukan pendefinisian abstaract class pengguna
+ abstract class Pengguna {
+    //perintah untuk membuat atribut nama dengan hak akses protected
+    protected $nama;
 
-<h5>Proses Membuat Class, Encapsulation, Inheritance, Polymorphism dan Abstraction</h5>
-1. 
+    //perintah untuk membuat constructor untuk menginisialisasi atribut
+    public function __construct($nama){
+         //menginisialisasi  nilai atribut nama
+        $this->nama = $nama;
+    }
+
+    //Method untuk mengambil atau mengakses atribut private
+    public function getNama(){
+        return $this->nama;
+    }
+
+    //perintah untuk membuat abstract method aksesFitur()
+    abstract public function aksesFitur();
+
+}
+?>
+```
+Pada saat di akses fiturnya tidak memiliki body, karena metode yang di buat sebagai abstract hanya memiliki head, dan kelas yang menurunin nya harus melakukan implemantasinya sendiri terhadap aksesFitur()
+
+o Implementasikan class Mahasiswa dan Dosen yang mengimplementasikan
+metode abstrak tersebut.<br>
+###### a. class mahasiswa
+```php
+<?php
+//perintah untuk membuka perintah atau dokumen php
+//perintah untuk membuat atau mendefinisikan class mahasiswa untuk mewarisi dari class pengguna
+class Mahasiswa extends pengguna{
+    //perintah untuk membuat atribut, dan memberikan hak akses kepada masing masing atribut, hak akses yang digunakan disini yaitu private
+    private $nim;
+    private $jurusan;
+
+    //membuat method construct untuk menginisialisasi atribut
+    public function __construct($nama, $nim, $jurusan){
+        //perintah untuk memanggil constructor parent untuk menginisialisasi atribut nama
+        parent::__construct($nama);
+        //menginisialisasi  nilai atribut nip, mataKuliah
+        $this->nim = $nim;
+        $this->jurusan = $jurusan;
+    
+    }
+
+    //perintah untuk membuat method untuk menampilkan data mahasiswa
+    public function tampilkanData() {
+        //mengembalikan niali berupa string ketika method ini dipanggil
+        return "Mahasiswa ini bernama $this->nama dengan nim $this->nim dari jurusan $this->jurusan.";
+    }
+
+    /*membuat metode getter pada atribut name, karena atribut name bersifat private, 
+    dan fungsi metode get digunakan untuk mengakses nilai dari atribut yang bersifat private 
+    yang tidak bisa diakses oleh luar class, metode get juga dapat digunakan untuk mengambil nilai.*/
+    public function getNama(){
+        return $this->nama;
+    }
+
+    /*Membuat method setter untuk mengubah nilai yang ada pada atribut private
+    methode ini digunakan untuk mangatur nilai dari atribut private yang tidak bisa diakses 
+    secara langsung dari luar kelas*/ 
+    public function setNama($nama_baru) {
+        $this->nama = $nama_baru;
+        return "nama telah diganti menjadi $this->nama.";
+    }
+
+    /*membuat metode getter pada atribut nim, karena atribut nim bersifat private, 
+    dan fungsi metode get digunakan untuk mengakses nilai dari atribut yang bersifat private 
+    yang tidak bisa diakses oleh luar class, metode get juga dapat digunakan untuk mengambil nilai.*/
+    public function getNim(){
+        return $this->nim;
+    }
+     
+    /*Membuat method setter untuk mengubah nilai yang ada pada atribut private
+    methode ini digunakan untuk mangatur nilai dari atribut private yang tidak bisa diakses 
+    secara langsung dari luar kelas*/ 
+    public function setNim($nim_baru){
+        $this->nim = $nim_baru;
+        return "nim telah diganti menjadi $this->nim.";
+    }
+
+    
+    /*membuat metode getter pada atribut jurusan, karena atribut jurusan bersifat private, 
+    dan fungsi metode get digunakan untuk mengakses nilai dari atribut yang bersifat private 
+    yang tidak bisa diakses oleh luar class, metode get juga dapat digunakan untuk mengambil nilai.*/
+    public function getJurusan(){
+        return $this->jurusan;
+    }
+
+    /*Membuat method setter untuk mengubah nilai yang ada pada atribut private
+    methode ini digunakan untuk mangatur nilai dari atribut private yang tidak bisa diakses 
+    secara langsung dari luar kelas*/
+    public function setJurusan($jurusan_baru){
+        $this->jurusan = $jurusan_baru;
+        return "jurusan telah diganti menjadi $this->jurusan.";
+    }
+
+    //perintah untuk membuat aksesFitur()
+    public function aksesFitur(){
+        //mengembalikan nilai
+        return "Mahasiswa ini bernama $this->nama dengan nim $this->nim dari jurusan $this->jurusan dapat mengakses jadwal perkuliahan";
+    }
+}
+?>
+```
+
+###### b. class dosen 
+```php
+<?php
+//perintah untuk membuat class Dosen yang mewarisi sifat dari class pengguna
+class Dosen extends Pengguna {
+    //membuat atribut matakuliah dengan hak akses private
+    private $matakuliah;
+
+    //perintah untuk membuat constructor untuk menginisialisasi atribut
+    public function __construct($nama, $matakuliah){
+        //perintah untuk memanggil constructor class induk yaitu pengguna untuk menginisialisasi nama
+        parent::__construct($nama);
+        //menginisialisasi  nilai atribut matakuliah
+        $this->matakuliah = $matakuliah;
+    }
+
+    //perintah untuk membuat method get untuk mengakses atribut private
+    public function getMataKuliah(){
+        //mengembalikan nilai
+        return "Mata Kuliah $this->matakuliah";
+    }
+
+    //perintah untuk membuat method tampilDataDosen() untuk menampilkan data dosen saat method ini dipanggil
+    public function tampilDataDosen(){
+        return "Dosen ini bernama $this->nama , beliau mengajar $this->matakuliah.";
+    }
+
+    //perintah untuk membuat method aksesFitur()
+    public function aksesFitur(){
+        //mengembalikan nilai
+        return "Dosen ini bernama $this->nama, beliau mengajar $this->matakuliah dapat mengelola dan melihat jadwal perkuliahan";
+    }
+
+}
+?>
+```
+o Demonstrasikan dengan memanggil metode aksesFitur() dari objek yang
+diinstansiasi.<br>
+##### codingan pemanggilan method aksesFitur()
+```php
+<?php
+//perintah untuk instansiasi objek dari class mahasiswa
+$mahasiswa2 = new Mahasiswa("Olivia", "12354643", "Bahasa");
+//perintah untuk memanggil dan mengakses method akesFitur()
+echo $mahasiswa2->aksesFitur();
+echo "<br>";
+
+//perintah untuk instansiasi objek dari class dosen
+$dosen2 = new Dosen("Sabrina", "Musik");
+//perintah untuk memanggil dan mengakses method akesFitur()
+echo $dosen2->aksesFitur();
+?>
+```
+
+##### Hasil Output
+![22](https://github.com/user-attachments/assets/40790777-61a2-4cf5-af83-13ceaa8a4fb8)
+Hasil di atas berhasil karena semua class turunan dari pengguna mengimplemnetasikan aksesFitur dengan implementasi semua. Jika salah satu class gturunan tidak mengimplemntasikan aksesFitur() maka codingan akan error
+
+##### contoh codingan jika salah satu tidak mengimplementasikan asksesFitur()
+###### a. codingan dibagian class dosen 
+```php
+<?php
+//perintah untuk membuat class Dosen yang mewarisi sifat dari class pengguna
+class Dosen extends Pengguna {
+    //membuat atribut matakuliah dengan hak akses private
+    private $matakuliah;
+
+    //perintah untuk membuat constructor untuk menginisialisasi atribut
+    public function __construct($nama, $matakuliah){
+        //perintah untuk memanggil constructor class induk yaitu pengguna untuk menginisialisasi nama
+        parent::__construct($nama);
+        //menginisialisasi  nilai atribut matakuliah
+        $this->matakuliah = $matakuliah;
+    }
+
+    //perintah untuk membuat method get untuk mengakses atribut private
+    public function getMataKuliah(){
+        //mengembalikan nilai
+        return "Mata Kuliah $this->matakuliah";
+    }
+
+    //perintah untuk membuat method tampilDataDosen() untuk menampilkan data dosen saat method ini dipanggil
+    public function tampilDataDosen(){
+        return "Dosen ini bernama $this->nama , beliau mengajar $this->matakuliah.";
+    }
+
+    // //perintah untuk membuat method aksesFitur()
+    // public function aksesFitur(){
+    //     //mengembalikan nilai
+    //     return "Dosen ini bernama $this->nama, beliau mengajar $this->matakuliah dapat mengelola dan melihat jadwal perkuliahan";
+    // }
+
+}
+?>
+```
+aksesFitur() di class dosen saya matikan dengan komen maka akan seperti ini outputnya
+###### b. Hasil Output jika salah satu class turunan (contoh class dosen) tidak mengimplementasikan aksesFitur()
+![23](https://github.com/user-attachments/assets/7b9e9802-e2d3-40ce-8f7a-659c5939d642)
+Hasil di atas adalah error karena class dosen tidak mengimplementasikan aksesFitur()
+
+##### Penggunaan method
+1. method yang digunakan disini adalah method construct, tampilkanData(), getter, setter, aksesFitur() dan tampilDataDosen()<br>
+2. method consctruct adalah method khusus yang secara otomatis terpanggil saat membuat objek baru. Construct digunakan untuk mengatur nilai awal dari atribut. Constructor memastikan bahwa saat membuat objek baru maka nilai tersebut akan tersimpan ke dalam atribut tersebut.<br>
+3. method tampilkanData adalah method dibuat untuk menampilkan informasi mahasiswa. Ketika method ini dipanggil maka method ini akan mengembalikan nilai berupa kalimat yang berisi informasi mahasiswa seperti nama, nim dan jurursan.<br>
+4. method getter adalah method yang digunakan untuk mengakses atribut yang bersifat private.
+5. method setter adalah method yang digunakan untuk mengubah atau mengatur nilai apa atribut yang bersifat private
+6. method aksesFitur adalah method yang digunakan untuk memberikan akses terhadap mahasiswa dan dosen, dalam kasus ini method ini digunakan untuk polymorphism dan abstract.
+7. method tampilDataDosen adalah method dibuat untuk menampilkan informasi dosen. Ketika method ini dipanggil maka method ini akan mengembalikan nilai berupa kalimat yang berisi informasi dosen seperti nama, nip , dan mata kuliah<br>
+
+##### Sumber Kode
+1. <b>class mahasiswa</b> adalah class yang dibuat dengan nama mahasiswa untuk menampung beberapa data. data yang nantinya akan di buat dengan instansiasi objek dari class mahasiswa
+2. 
 
 
 
