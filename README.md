@@ -17,9 +17,13 @@ Aksebilitas atau Hak Akses yang dimiliki atribut dan method : <br>
 
 ### Instruksi Kerja Jobsheet 1
 1. Membuat Class dan Object<br>
-2. Implementasi Constructor<br>
-3. Membuat Metode Tambahan<br>
-4. Penggunaan Atribut dan Method<br>
+o Buat class Mahasiswa yang memiliki atribut nama, nim, dan jurusan.<br>
+o Buat metode tampilkanData() dalam class Mahasiswa.<br>
+o Instansiasi objek dari class Mahasiswa dan tampilkan data mahasiswa tersebut.<br>
+
+3. Implementasi Constructor<br>
+4. Membuat Metode Tambahan<br>
+5. Penggunaan Atribut dan Method<br>
 
 ### Tugas Jobsheet 1
 ##### Proses Pembuatan Class
