@@ -16,7 +16,7 @@ Aksebilitas atau Hak Akses yang dimiliki atribut dan method : <br>
   c. Protected : Dapat diakses oleh kelas itu sendiri atau kelas turunan<br>
 
 ### Instruksi Kerja Jobsheet 1
-1. Membuat Class dan Object<br>
+**1. Membuat Class dan Object<br>**
 o Buat class Mahasiswa yang memiliki atribut nama, nim, dan jurusan.<br>
 o Buat metode tampilkanData() dalam class Mahasiswa.<br>
 o Instansiasi objek dari class Mahasiswa dan tampilkan data mahasiswa tersebut.<br>
@@ -84,7 +84,7 @@ echo "<br><br>";
 ![2](https://github.com/user-attachments/assets/9f9e21ae-de06-4069-9a82-fa5352587c94)
 Nilai berhasil dimasukkan tetapi secara manual, maka dari itu langkah selanjutnya yaitu membuat class dengan menambahkan construct
 
-2. Implementasi Constructor<br>
+**2. Implementasi Constructor<br>**
 o Tambahkan constructor pada kelas Mahasiswa yang akan menginisialisasi
 atribut nama, nim, dan jurusan.<br>
 o Gunakan constructor ini untuk mengatur nilai awal dari atribut saat objek dibuat.<br>
@@ -135,7 +135,7 @@ echo "<br><br>";
 ![3](https://github.com/user-attachments/assets/396330f8-709e-4f83-88db-606e9268bf25)
 Output di atas berhasil karena menggunakan construct dan nilai berhasil di masukan ke dalam atribut
 
-3. Membuat Metode Tambahan<br>
+**3. Membuat Metode Tambahan<br>**
 o Buat metode updateJurusan() dalam kelas Mahasiswa yang memungkinkan
 perubahan jurusan.<br>
 o Gunakan metode ini untuk mengubah jurusan dari objek yang sudah dibuat.<br>
@@ -202,7 +202,7 @@ echo "<br>";
 ![4](https://github.com/user-attachments/assets/f1383145-0c4f-4766-af27-f13448a43891)
 Output di atas menampilkan bahwa jurusan telah diubah
 
-4. Penggunaan Atribut dan Method<br>
+**4. Penggunaan Atribut dan Method<br>**
 o Ubah nilai atribut nim dari objek Mahasiswa menggunakan metode setter.<br>
 o Tampilkan data mahasiswa yang sudah diperbarui dengan memanggil metode tampilkanData().<br>
 #### Untuk mengubah atribut nim dengan metode setter, artinya kita harus membuat terlebih dahulu
@@ -286,7 +286,7 @@ echo $mahasiswa1->tampilkanData();
 
 
 ### Tugas Jobsheet 1
-1. Implementasikan kelas Dosen dengan atribut nama, nip, dan mataKuliah.<br>
+**1. Implementasikan kelas Dosen dengan atribut nama, nip, dan mataKuliah.<br>**
 ##### Dibawah ini codingan untuk membuat class
 ```php
 <?php
@@ -314,7 +314,7 @@ Diatas adalah codingan untuk pembuatan class dan embuatan metode construct untuk
 ![7](https://github.com/user-attachments/assets/044f136c-bb9a-410a-810f-05ff30766f53)
 Belum ada output karena belum instansiasi objek dan belum menampilkan data
 
-2. Buat metode tampilkanDosen() untuk menampilkan informasi dosen.<br>
+**2. Buat metode tampilkanDosen() untuk menampilkan informasi dosen.<br>**
 ##### Codingan untuk membuat metode tampilkanDosen()
 ```php
  //membuat method tampilkanDosen untuk saat nanti dipanggil untuk menampilkan data dosen
@@ -353,8 +353,8 @@ class dosen{
 ![8](https://github.com/user-attachments/assets/8a9ae46d-e5d4-4d59-8543-e2465d09a235)
 tetap kosong karena belum memanggil method dan belum instansiasi objek
 
-3. Buat objek dari kelas Dosen, dan gunakan metode tampilkanDosen() untuk
-menampilkan informasi tersebut. <br>
+**3. Buat objek dari kelas Dosen, dan gunakan metode tampilkanDosen() untuk
+menampilkan informasi tersebut. <br>**
 ##### codingan untuk membuat objek dan juga menampilkan data
 ```php
 //instasiasi objek dari class Dosen
@@ -432,7 +432,7 @@ Abstraction adalah prinsip yang menyembunyikan detail implementasi dan hanya men
 
 
 ### Instruksi Kerja Jobsheet 2
-1. Membuat Class dan Object<br>
+**1. Membuat Class dan Object<br>**
 o Buat class Mahasiswa yang memiliki atribut nama, nim, dan jurusan.<br>
 ##### codingan untuk membuat class
 ```php
@@ -552,7 +552,7 @@ echo "<br>";
 ![18](https://github.com/user-attachments/assets/45afb5e2-99c4-4d4f-b228-21c29dc9736d)
 Hasil output diatas menampilkan tampilan dari perintah untuk membuat instansiasi lalu ditampilkan dengan memanggil method 
 
-2. Encapsulation<br>
+**2. Encapsulation<br>**
 o Ubah atribut dalam class Mahasiswa menjadi private.
 ##### Codingan mengubah atribut menjadi private
 ```php
@@ -765,7 +765,7 @@ echo "<br>";
 ![19](https://github.com/user-attachments/assets/08220053-2dfa-46bb-bf0a-76842116d4ab)
 Hasil Output di atas berhasil setelah melakukan Encapsulation.
 
-3. Inheritance<br>
+**3. Inheritance<br>**
 o Buat class Pengguna dengan atribut nama dan metode getNama().<br>
 ##### Codingan untuk membuat class pengguna dan method getNama()
 ```php
@@ -1003,7 +1003,7 @@ echo "<br><hr>";
 ##### Hasil Output 
 ![20](https://github.com/user-attachments/assets/0d69dd9c-8390-496c-9f55-11fedda538e2)
 
-4. Polymorphism<br>
+**4. Polymorphism<br>**
 o Buat class Pengguna dengan metode aksesFitur().<br>
 ##### Codingan membuat class pengguna dengan metode akses Fitur()
 ```php
@@ -1270,7 +1270,7 @@ echo $dosen2->aksesFitur();
 ![21](https://github.com/user-attachments/assets/e77d45c9-f16e-43e4-bd00-146981fe1ba3)
 Hasil Output di atas menampilkan setelah melakukan polymorphism bahwa berhasil melakukan implementasi method aksesFitur() dengan cara yang berbeda
 
-7. Abstraction<br>
+**5. Abstraction<br>**
 o Buat class abstrak Pengguna dengan metode abstrak aksesFitur().<br>
 ```php
 <?php
@@ -1534,7 +1534,7 @@ hanya menampilkan fungsionalitas utama kepada pengguna. Ini biasanya dicapai
 dengan menggunakan kelas abstrak atau antarmuka.<br>
 
 ### Instruksi Kerja
-1. Inheritance<br>
+**1. Inheritance<br>**
 o Buat kelas Person dengan atribut name dan metode getName().<br>
 ##### codingan untuk membuat class person
 ```php
@@ -1646,7 +1646,7 @@ echo $student1->getName(). " Mempunyai ID " . $student1->getStudentID();
 ![24](https://github.com/user-attachments/assets/eaccf2a4-8593-439c-99a3-d65f04c841da)
 hasil output di atas menunjukan bahwa telah berhasil melakukan inheritance
 
-2. Polymorphism<br>
+**2. Polymorphism<br>**
 o Buat kelas Teacher yang juga mewarisi dari Person dan tambahkan atribut
 teacherID.<br>
 ##### codingan membuat class teacher
@@ -1852,7 +1852,7 @@ echo $teacher1->getName();
 ![25](https://github.com/user-attachments/assets/8cfb105d-cd8e-4ae6-bee3-0d16acb4ee69)
 Hasil Output di atas berhasil setelah melakuakn polymorphism
 
-3. Encapsulation<br>
+**3. Encapsulation<br>**
 o Ubah atribut name dan studentID dalam kelas Student menjadi private.<br>
 ##### codingan stelah atribut studentID menjadi private
 ```php
@@ -2019,7 +2019,7 @@ echo "<br>";
 ##### Hasil Output
 ![26](https://github.com/user-attachments/assets/caa794f7-b1af-4f5b-9f89-671ef79c7c77)
 
-4. Abstraction<br>
+**4. Abstraction<br>**
 o Buat kelas abstrak Course dengan metode abstrak getCourseDetails().<br>
 ##### codingan class abstract course
 ```php
